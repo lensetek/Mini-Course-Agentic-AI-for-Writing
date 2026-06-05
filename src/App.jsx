@@ -2702,6 +2702,39 @@ export default function LensetekAgenticAiLandingPage() {
     }
   }, [user, certificateRecord?.certificateNo]);
 
+  // Dynamic SEO / AIO Updates based on active language (EN/ID)
+  useEffect(() => {
+    const isEn = lang === "EN";
+    
+    // 1. Update document language attribute
+    document.documentElement.lang = isEn ? "en" : "id";
+    
+    // 2. Dynamic Title
+    const title = isEn 
+      ? "Agentic AI Mastery for Researchers & Authors | Course by Lensetek" 
+      : "Mastery Agentic AI untuk Peneliti & Penulis | Kursus Lensetek";
+    document.title = title;
+    
+    // 3. Dynamic Meta Description
+    const description = isEn
+      ? "Build autonomous research and writing ecosystems with Agentic AI. Learn NotebookLM, Google Opal, and Google Antigravity to automate academic literature review, proposal drafting, and book outlines without coding."
+      : "Bangun ekosistem riset dan penulisan otonom dengan Agentic AI. Pelajari NotebookLM, Google Opal, dan Google Antigravity untuk otomatisasi tinjauan pustaka, draf proposal, dan outline buku tanpa coding.";
+    
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) descMeta.setAttribute("content", description);
+    
+    // 4. Dynamic Open Graph & Twitter Metadata
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", title);
+    if (twitterTitle) twitterTitle.setAttribute("content", title);
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", description);
+    if (twitterDesc) twitterDesc.setAttribute("content", description);
+  }, [lang]);
+
   if (isVerificationPage) {
     return (
       <main className="min-h-screen bg-slate-50 px-6 py-10 text-slate-900 font-['Inter']">

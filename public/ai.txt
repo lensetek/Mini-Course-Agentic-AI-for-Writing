@@ -1,0 +1,17 @@
+# AI Agent Accessibility and Metadata (ai.txt)
+# Website: https://lensetek.online
+
+User-agent: *
+Allow-crawl: /
+Allow-crawl: /llms.txt
+
+# Course Metadata
+System-Name: Lensetek Agentic AI Mastery Platform
+Purpose: Interactive learning portal for academic researchers, lecturers, and authors to learn NotebookLM, Google Opal, and Google Antigravity.
+Publisher: Lensetek International, LLC.
+Primary-Language: en, id
+Contact: info@lensetek.com
+
+# Core Resources
+Syllabus: https://lensetek.online/#modules
+Certification-Verification: https://lensetek.online/verify

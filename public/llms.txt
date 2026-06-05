@@ -1,0 +1,74 @@
+# Agentic AI Mastery for Researchers & Authors
+
+An interactive learning platform and certification program by Lensetek International, LLC. This course is designed to teach academic researchers, lecturers, university students, authors, and educational consultants how to build autonomous, source-grounded AI agent workflows, custom assistants, and reusable academic skills without writing code.
+
+- **Primary URL**: https://lensetek.online/
+- **Verification Portal**: https://lensetek.online/verify
+- **Provider**: Lensetek International, LLC.
+- **Duration**: 20 Hours (5 Modules, 4 Hours each)
+- **Difficulty**: Beginner - Intermediate (No coding background required)
+- **Tech Stack**: React, Vite, Tailwind CSS, Firebase Authentication, Firestore, OpenAI Agents SDK.
+
+---
+
+## Core Focus Areas
+
+1. **Knowledge Management with NotebookLM**
+   - Source-grounded AI structures to eliminate LLM hallucinations.
+   - Organizing academic reference materials (journals, books, reports).
+   - Comparative literature synthesis and pattern extraction.
+   - Audio Overview discussions for rapid literature ingestion.
+
+2. **No-Code Academic Agents with Google Opal**
+   - Designing multi-step reasoning workflows visually.
+   - Creating custom Research Idea Assistants, Proposal Assistants, and Book Outline Planners.
+   - Deploying Academic Reviewer Agents to critique methodological arguments.
+
+3. **Reusable Capabilities with Google Antigravity**
+   - Engineering specialized skills using SOP structures (SKILL.md).
+   - Setting strict instructions, behavioral constraints, and formatting outputs (e.g., JSON).
+   - Building Gap Creators, Literature Matrix Creators, and Proposal Reviewers.
+
+4. **Orchestrating Autonomous Publishing Ecosystems**
+   - Integrating NotebookLM, Opal, and Antigravity into unified pipelines.
+   - Setting up Systematic Literature Review (SLR) automations.
+   - Building Thesis companion systems and book drafting pipelines.
+   - Applying Human-in-the-Loop (HITL) checkpoints for fact-checking and reference verification.
+   - Learning AI ethics, citation validity, and journal compliance (Elsevier, Nature, IEEE).
+
+---
+
+## Curriculum Syllabus
+
+### Module 1: AI Research Brain with NotebookLM
+- **Focus**: Learn to build source-grounded knowledge workspaces.
+- **Topics**: Information overload challenges, source grounding vs general chatting, comparative analysis, literature matrix building, and Audio Overview podcasts.
+
+### Module 2: Building Academic Productivity Agents with Google Opal
+- **Focus**: Visual, no-code multi-step agent creation.
+- **Topics**: Transitioning from chatbots to working agents, Google Opal mini-app builder, Research Idea Agent (generating research phenomena and variables), Proposal Assistant Agent, and Book Planning Agent.
+
+### Module 3: Building Research & Writing Skills with Google Antigravity
+- **Focus**: Designing SOP-based reusable capabilities.
+- **Topics**: Skill vs Agent, SKILL.md folder structure, Research Gap Creator Skill, Literature Matrix Creator Skill, and Academic Outline Creator.
+
+### Module 4: Autonomous Research & Book Publication Systems
+- **Focus**: End-to-end integration and orchestration.
+- **Topics**: Research OS orchestration, SLR pipelines, automated book writing workflows, Human-in-the-Loop verification, reference hallucination mitigation, and AI ethics for academic authorship.
+
+### Module 5: Final Capstone Project
+- **Focus**: Practical specialized deployment.
+- **Topics**: Specialization Tracks (Track A: Research OS, Track B: Thesis OS, Track C: Book OS, Track D: Reviewer OS) and UAT testing.
+
+---
+
+## Certification Credential
+
+Students who complete all five module quizzes and submit the capstone project earn the credential:
+**Certified Agentic AI Research & Authoring Practitioner**
+*Competencies certified:*
+- Source-Grounded Knowledge Management
+- No-Code Agent Development
+- Skill Engineering and SOP Design
+- Research Operating System Orchestration
+- Ethical AI Academic Writing & Publishing
