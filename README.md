@@ -1,8 +1,8 @@
-# Mini Course: Agentic AI for Marketing & Business
+# Mini Course: Agentic AI for Writing
 
-An interactive web learning platform for the **Agentic AI for Marketing & Business** mini course by Lensetek International. The app combines a course landing page, student classroom, bilingual learning modules, quiz verification, certificate flow, and a server-side AI Mentor sandbox.
+An interactive web learning platform for the **Agentic AI for Writing** mini course by Lensetek International. The app combines a course landing page, student classroom, bilingual learning modules, quiz verification, certificate flow, and a server-side AI Mentor sandbox.
 
-The platform is designed for marketers, business owners, operators, consultants, educators, and enterprise teams who want to learn how to design AI agent workflows without starting from code.
+The platform is designed for writers, copywriters, content creators, authors, marketers, and professionals who want to learn how to design AI agent workflows for writing without starting from code.
 
 ## App Overview
 
@@ -31,15 +31,15 @@ The course contains 5 main modules with a total of 20 learning hours:
    - Collaborative multi-agent workflows.
    - Reviewer agents, guardrails, and human-in-the-loop checkpoints.
 
-3. **Marketing Automation**
+3. **Advanced AI Writing Workflows**
    - Automated SEO writing workflows.
-   - Trend research and competitor tracking.
-   - Competitor SWOT automation.
+   - Long-form content generation.
+   - Editing and proofreading agents.
 
-4. **Business Operations with Google Opal**
+4. **Content Operations with AI**
    - Visual AI mini-apps with drag-and-drop workflows.
-   - Sales outreach automation.
-   - Lead scoring and SME operations.
+   - Content repurposing automation.
+   - Idea generation and research agents.
 
 5. **Low-Code Deployments & Launch**
    - Low-code connections and automation triggers.
@@ -78,8 +78,8 @@ The course contains 5 main modules with a total of 20 learning hours:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/lensetek/Mini-Course-Agentic-AI-for-Marketing-Business.git
-cd Mini-Course-Agentic-AI-for-Marketing-Business
+git clone https://github.com/lensetek/Mini-Course-Agentic-AI-for-Writing.git
+cd Mini-Course-Agentic-AI-for-Writing
 ```
 
 ### 2. Install Dependencies
@@ -108,8 +108,8 @@ OPENAI_MODEL=gpt-4.1-nano
 PORT=3001
 ```
 
-Security notes:
-
+Security notes (**CRITICAL**):
+- **Selalu cek keamanan credential project agar tidak terekspose public seperti di frontend atau diakses melalui client side.**
 - Variables with the `VITE_` prefix are bundled into the frontend by Vite. Use them only for public client configuration such as Firebase web config.
 - Never store the OpenAI API key in a `VITE_` variable.
 - The OpenAI key must stay on the backend through `OPENAI_API`, where it is used by `server.js`.
@@ -182,6 +182,10 @@ npm run lint
 ```
 
 Runs ESLint.
+
+## Development Guidelines
+
+- **Mobile-View First**: Selalu perhatikan tampilan responsive mobile-view first saat mengembangkan komponen UI.
 
 ## Deployment
 

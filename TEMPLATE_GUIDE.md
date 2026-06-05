@@ -16,15 +16,15 @@ npm install
 ```
 
 ## 3. Environment & Database Configuration (Security & Isolation)
-**IMPORTANT**: Always ensure project credentials are secure so they are not exposed publicly (e.g., in the frontend or accessible via client-side).
+**CRITICAL RULE**: **Selalu cek keamanan credential project agar tidak ter ekspose public seperti di frontend atau diakses melalui client side.**
 - Create a new `.env.local` file based on the `.env.example` file.
 - Create a new backend/Firebase project (if required) and insert the new configuration/API Keys into `.env.local`.
 - **CRITICAL DATA ISOLATION**: If you must reuse an existing Firebase/Database project, you **MUST** rename all database collections in your source code (e.g., in Firestore, rename `progress` to `newcourse_progress`, `certificates` to `newcourse_certificates`). Using the exact same collection names as an existing live project will corrupt and overwrite active student data across multiple courses.
-- Remember: Only use the `VITE_` prefix for environment variables that are safe and need to be read by the browser/frontend. Never expose highly sensitive secret keys.
+- Remember: Only use the `VITE_` prefix for environment variables that are safe and need to be read by the browser/frontend. Never expose highly sensitive secret keys like OpenAI API keys or Firebase Admin credentials in frontend variables.
 
 ## 4. Updating Project Identity
 Update the application identity from the old project to the new one in the following files:
-- **`package.json`**: Update the `"name"` and `"description"` properties.
+- **`package.json`**: Update the `"name"` and `"description"` properties to match your new course (e.g., "Mini-Course-Agentic-AI-for-Writing").
 - **`index.html`**: Update the text inside the `<title>...</title>` tag.
 - **Visual Assets**: Replace the logo, favicon, and other images in the `public/` and `src/assets/` directories.
 
@@ -33,9 +33,10 @@ Update the application identity from the old project to the new one in the follo
 - Replace any static text on the registration page, home page, or dashboard.
 
 ## 6. Design Guidelines (Mobile-First)
-Ensure you always adhere to the project's core design principle: **Mobile-View First Responsive Design**:
-- When creating or modifying UI components, design and optimize the layout for mobile screen sizes first.
-- Always use the browser's developer tools to test the mobile-view mode after making any styling (CSS) changes.
+**CRITICAL RULE**: **Selalu perhatikan tampilan responsive mobile-view first.**
+Ensure you always adhere to the project's core design principle:
+- When creating or modifying UI components, design and optimize the layout for mobile screen sizes first before scaling up to tablet or desktop views.
+- Always use the browser's developer tools to test the mobile-view mode after making any styling (CSS) changes to guarantee a seamless mobile experience.
 
 ---
 Once all the steps above are completed, you can run the new project locally with the following command:
