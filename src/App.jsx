@@ -484,6 +484,7 @@ const t = {
         title: "Final Capstone Project",
         hours: "4 Hours",
         desc: "Apply your knowledge by building a specialized academic operating system.",
+        githubUrl: "https://github.com/lensetek/Research-Agent-Skills-Collection/tree/main",
         materials: {
           institution: "Lensetek International, LLC.",
           course: "Agentic AI Mastery for Researchers & Authors",
@@ -777,6 +778,7 @@ const t = {
         title: "Final Capstone Project",
         hours: "4 Jam",
         desc: "Terapkan pengetahuan Anda dengan membangun sistem operasi akademik khusus.",
+        githubUrl: "https://github.com/lensetek/Research-Agent-Skills-Collection/tree/main",
         materials: {
           institution: "Lensetek International, LLC.",
           course: "Agentic AI Mastery for Researchers & Authors",
@@ -3437,9 +3439,23 @@ export default function LensetekAgenticAiLandingPage() {
                         <span className="text-[9px] uppercase tracking-widest text-cyan-600 font-extrabold">
                           {currentT.modulesList[activeModuleIdx].materials.institution}
                         </span>
-                        <h3 className="text-xl font-bold font-['Plus_Jakarta_Sans'] text-slate-800 mt-1">
-                          {currentT.modulesList[activeModuleIdx].materials.course}
-                        </h3>
+                        <div className="flex items-center justify-between mt-1">
+                          <h3 className="text-xl font-bold font-['Plus_Jakarta_Sans'] text-slate-800">
+                            {currentT.modulesList[activeModuleIdx].materials.course}
+                          </h3>
+                          {currentT.modulesList[activeModuleIdx].githubUrl && (
+                            <a 
+                              href={currentT.modulesList[activeModuleIdx].githubUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="flex items-center gap-2 px-4 py-2 bg-[#24292e] text-white text-xs font-bold rounded-xl hover:bg-[#1b1f23] hover:scale-105 transition-all shadow-md shrink-0" 
+                              title="View Capstone Skills on GitHub"
+                            >
+                              <GithubIcon className="h-4 w-4" />
+                              {lang === "EN" ? "GitHub Repo" : "Repo GitHub"}
+                            </a>
+                          )}
+                        </div>
                         <div className="flex flex-wrap gap-3 mt-2 text-xs text-slate-500 font-medium">
                           <span>⏱️ {currentT.modulesList[activeModuleIdx].materials.duration}</span>
                           <span>•</span>
