@@ -12,7 +12,7 @@ if (fs.existsSync(".env.local")) {
 
 const invitationCodes = [
   { code: "UNDA", limit: 30 },
-  { code: "WIDYATAMA", limit: 250 },
+  { code: "WIDYATAMA", limit: 370 },
   { code: "UNJA", limit: 250 },
   { code: "AI-MARKETER-2026", limit: 5 },
   { code: "MEMBER-SPECIAL", limit: 1 },
