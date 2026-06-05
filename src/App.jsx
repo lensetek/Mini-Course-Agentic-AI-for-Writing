@@ -37,7 +37,7 @@ import { signInWithPopup, signOut } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, googleProvider, db } from "./firebase";
 
-const githubUrl = "https://github.com/lensetek/Mini-Course-Agentic-AI-for-Marketing-Business";
+const githubUrl = "https://github.com/lensetek/Mini-Course-Agentic-AI-for-Writing";
 const agentApiUrl = import.meta.env.VITE_AGENT_API_URL || (import.meta.env.DEV ? "http://localhost:3001/api/agent/run" : "/api/agent/run");
 
 const stripLogPrefix = (log) => log.replace(/^.*?\]:\s*/, "");
@@ -157,33 +157,33 @@ const createMindmapFromLogs = (labLogs, activeModuleTitle, lang) => {
 const agentSteps = [
   {
     id: 1,
-    title: "Trend Research Agent",
-    desc: "Mencari tren, keyword, dan peluang SEO",
-    details: "Menganalisis Google Trends & SERP terbaru untuk mengidentifikasi topik bernilai tinggi.",
+    title: "Literature Search Agent",
+    desc: "Mencari jurnal dan publikasi ilmiah terbaru",
+    details: "Memindai basis data akademik seperti PubMed, arXiv, dan Google Scholar untuk literatur relevan.",
     status: "success",
     duration: 1.5
   },
   {
     id: 2,
-    title: "Content Writer Agent",
-    desc: "Menulis konten sesuai brand voice",
-    details: "Membuat draft artikel, postingan sosial media, dan email newsletter terstruktur.",
+    title: "Synthesis & Gap Agent",
+    desc: "Mengekstrak temuan dan celah penelitian",
+    details: "Menganalisis artikel untuk menyusun literature matrix dan memetakan fenomena/gap penelitian.",
     status: "success",
     duration: 2.0
   },
   {
     id: 3,
-    title: "QA & Fact-Check Agent",
-    desc: "Memeriksa akurasi dan keterbacaan",
-    details: "Memvalidasi sumber data, memeriksa kesalahan tata bahasa, dan memverifikasi keterbacaan SEO.",
+    title: "Draft Outline Agent",
+    desc: "Menyusun draf kerangka naskah/proposal",
+    details: "Membangun outline proposal yang logis, lengkap dengan pendahuluan, metodologi, dan bab buku.",
     status: "success",
     duration: 1.0
   },
   {
     id: 4,
-    title: "Report Agent",
-    desc: "Mengirim ringkasan ke email/dashboard",
-    details: "Secara otomatis mempublikasikan ke CMS dan mengirimkan KPI performa ke tim Anda.",
+    title: "Ethics & Citation Agent",
+    desc: "Memverifikasi sitasi dan kepatuhan etika",
+    details: "Memastikan semua sitasi mengikuti gaya APA/MLA dan melakukan pemeriksaan pencegahan halusinasi.",
     status: "success",
     duration: 0.8
   },
@@ -241,30 +241,30 @@ const t = {
     studentLoginBtn: "Student Login",
     badgeLabel: "Mini Course 20 Hours · 5 Sessions · Beginner to Intermediate",
     heroTitlePrefix: "Agentic AI for ",
-    heroTitleHighlight: "Marketing & Business",
-    heroDescription: "Learn how to build autonomous AI agents for market intelligence, scale high-converting content writing engines, streamline support, and automate spreadsheets. No coding experience required. Practical focus: master core architecture, orchestrate agent teams, and launch with modern low-code systems.",
+    heroTitleHighlight: "Researchers & Authors",
+    heroDescription: "Learn how to build autonomous AI agents for literature analysis, design custom research proposal assistants, build reusable academic writing skills, and orchestrate publishing ecosystems. No coding experience required. Practical focus: master source-grounded workspaces, build Opal agents, and write skills with Antigravity.",
     heroCTAEnroll: "Enroll Now via Google",
     heroCTALogin: "Student Login",
     statsHours: "Total Learning Hours",
     statsModules: "Hands-on Modules",
     statsFriendly: "Beginner Friendly",
     sandboxHeader: "Interactive Sandbox",
-    sandboxSub: "Marketing Intelligence Engine",
+    sandboxSub: "Academic Research Assistant",
     sandboxPlay: "Run Live Agent Demo",
     sandboxReset: "Reset Simulator",
     curriculumHeader: "Applied Curriculum",
     curriculumTitle: "From Core Architecture Design to Fully Ready Deployments.",
-    curriculumSub: "Our structures are systematically constructed to take you step-by-step: core conceptual agent framework, system architecture, marketing automatons, operational support, all the way to cloud orchestration and cost calculations.",
+    curriculumSub: "Our program is systematically structured to take you step-by-step: AI research brains, no-code academic agents, reusable skill libraries, autonomous writing workflows, all the way to ethical capstone implementations.",
     competencyHeader: "Key Competencies",
     competencyTitle: "Equip yourself with a brand new workflow mindset, not just another list of copy-paste prompts.",
-    competencyDescription: "This intensive program is crafted from the ground up for modern marketing heads, business owners, operational managers, technical consultants, educators, and enterprise teams seeking to deploy AI strategically.",
+    competencyDescription: "This program is crafted from the ground up for modern researchers, authors, lecturers, students, and academic professionals seeking to deploy AI strategically in their research and publishing workflows.",
     competencyCTAEnroll: "Register Account",
     competencyCTALogin: "Student Portal",
     useCasesHeader: "Real-world Use Cases",
-    useCasesTitle: "AI Solutions engineered for real-life business workflows.",
-    useCasesDescription: "Forget theoretical coding exercises. Every single use case is built directly around actual, critical operational responsibilities: high-speed market research, custom SEO contents, scalable sales qualification, inventory intelligence, and quick administrative solutions.",
+    useCasesTitle: "AI Solutions engineered for real-life academic workflows.",
+    useCasesDescription: "Forget theoretical coding exercises. Every single use case is built directly around actual, critical academic responsibilities: literature synthesis, gap creation, methodology validation, book outlines, and responsible AI-assisted draft writing.",
     ctaHeader: "Ready to construct your first automated multi-agent AI system?",
-    ctaDescription: "Register for the Lensetek Certification Program, enter our digital sandbox academy, and master Agentic AI frameworks designed specifically for business scale.",
+    ctaDescription: "Register for the Lensetek Certification Program, enter our digital sandbox academy, and master Agentic AI frameworks designed specifically for research and academic writing.",
     ctaBtnEnroll: "Register Now via Google",
     classroomHeader: "Student Classroom",
     classroomDesc: "Welcome to your Agentic AI Classroom. Browse the core modules, complete the quick validation challenges, and run live server-side agents.",
@@ -282,7 +282,7 @@ const t = {
     quizRetry: "Try Again",
     certTitle: "Certificate of Completion",
     certPresenter: "This is proudly presented to",
-    certBody: "For successfully mastering the concepts and engineering parameters of Agentic AI for Marketing & Business, completing all 5 technical verification sessions, and demonstrating hands-on proficiency in server-side AI Agent Orchestration.",
+    certBody: "For successfully mastering the concepts and engineering parameters of Agentic AI Mastery for Researchers & Authors, completing all 5 technical verification sessions, and demonstrating hands-on proficiency in server-side AI Agent Orchestration.",
     certIssued: "Issued By",
     certDate: "Date of Graduation",
     certPrint: "Print Certificate",
@@ -310,44 +310,44 @@ const t = {
     backToStudy: "Back to Study",
     classroomBtn: "Go to Classroom",
     curriculumBtn: "Go to Curriculum",
-    modulesList: [
+        modulesList: [
       {
         id: 1,
-        title: "Foundations of Agentic AI",
-        hours: "3 Hours",
-        desc: "Learn how to create custom AI assistants (Gemini Gems) and structure systematic thinking loops to automate business workflows without coding.",
+        title: "AI Research Brain with NotebookLM",
+        hours: "4 Hours",
+        desc: "Build an organized research knowledge base and leverage AI to rapidly comprehend academic sources.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Total Duration: 20 Hours (5 sessions × 4 hours)",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Total Duration: 20 Hours",
           difficulty: "Difficulty: Beginner (No coding background required)",
-          description: "This curriculum is designed with a practical, skills-driven approach where you do not need coding knowledge. You will directly use Gemini Gems, Google Opal, and Antigravity to build and launch AI agents to solve real business tasks.",
+          description: "This module covers how to overcome information overload, understand how NotebookLM works, build a research knowledge base, and perform advanced literature analysis.",
           sessions: [
             {
-              title: "Session 1.1: Chatbots vs. Autonomous Agents (1.5 Hours)",
+              title: "Session 1.1: Research Challenges & NotebookLM Basics",
               bullets: [
-                "Limitations of regular AI chats: passive prompting and manual copy-pasting.",
-                "Custom Gemini Gems: setting up system instructions, custom roles, and specific business goals.",
-                "Anatomy of an Agent: core engine (Brain), memory (Context retention), and visual workspace tools."
+                "The challenge of information overload and the risk of generative AI hallucinations.",
+                "How NotebookLM works with source-grounded AI.",
+                "Creating your first research workspace and understanding AI limitations."
               ]
             },
             {
-              title: "Session 1.2: Chain-of-Thought (CoT) Prompting (1.5 Hours)",
+              title: "Session 1.2: Literature Analysis & Pattern Discovery",
               bullets: [
-                "Deconstructing business processes: mapping out step-by-step reasoning paths.",
-                "ReAct reasoning loops: guiding an AI agent to think first, call external search tools, and observe outcomes.",
-                "Real Case: Designing a prompt workflow for high-speed SEO research and competitive audits."
+                "Uploading and organizing journals, books, and reports.",
+                "Literature synthesis, journal comparison, and key finding identification.",
+                "Using Audio Overview for rapid learning from multiple references."
               ]
             }
           ],
           quiz: {
-            question: "Which Gemini feature allows you to build custom, role-specific AI assistants with pre-defined system instructions?",
+            question: "What is the primary advantage of using NotebookLM for academic research compared to a standard chatbot?",
             options: [
-              "Google Workspace Docs",
-              "Gemini Gems (Custom role-specific assistants)",
-              "Google Custom Search",
-              "Chrome DevTools",
-              "Local SQL Database"
+              "NotebookLM can automatically write an entire book without input.",
+              "NotebookLM grounds its answers exclusively on the references you upload to prevent hallucination.",
+              "NotebookLM connects directly to social media.",
+              "NotebookLM executes local SQL queries.",
+              "NotebookLM translates languages without internet access."
             ],
             answerIdx: 1
           }
@@ -355,125 +355,125 @@ const t = {
       },
       {
         id: 2,
-        title: "Workflows & Multi-Agent Systems",
+        title: "Building Academic Productivity Agents with Google Opal",
         hours: "4 Hours",
-        desc: "Build a collaborative team of specialized Gems and design routing checkpoints to enforce quality controls over business output.",
+        desc: "Build no-code AI agents to automate research and academic writing activities.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Total Duration: 20 Hours (5 sessions × 4 hours)",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Total Duration: 20 Hours",
           difficulty: "Difficulty: Beginner (No coding background required)",
-          description: "Learn how to connect multiple Gemini Gems in a collaborative pipeline, letting specialized personas check each other's work and pass drafts smoothly.",
+          description: "Learn how to transform regular chats into automated agent workflows in Google Opal, such as Research Idea Assistants, Proposal Assistants, and Book Planning Assistants.",
           sessions: [
             {
-              title: "Session 2.1: Designing Specialized Gems (2 Hours)",
+              title: "Session 2.1: From Chatbots to Working Agents",
               bullets: [
-                "Drafting strict role guidelines for an SEO Specialist, a Copywriter, and a QA Editor.",
-                "Setting limits and guidelines to prevent repetitive outputs or straying off-brand.",
-                "Structuring output schemas: forcing Gems to deliver text formatted neatly for your worksheets."
+                "The paradigm shift from single-step chatbots to multi-step agent workflows.",
+                "Understanding Google Opal features and how to build mini-applications.",
+                "Building a Research Idea Agent to map phenomena and research gaps."
               ]
             },
             {
-              title: "Session 2.2: Connecting Collaborative Workflows (2 Hours)",
+              title: "Session 2.2: Advanced Academic Agents",
               bullets: [
-                "Supervisor Reviews: creating reviewer Gems that audit worker outputs and direct the next tasks.",
-                "Context continuity: passing draft details smoothly from writer Gems to editor Gems.",
-                "Human-in-the-loop: setting manual approval checkpoints before final publishing operations."
+                "Building a Proposal Assistant Agent for background and problem formulation.",
+                "Building an Academic Reviewer Agent to evaluate proposal argument weaknesses.",
+                "Designing a Book Planning Agent based on syllabus and lesson plans."
               ]
             }
           ],
           quiz: {
-            question: "In a collaborative Multi-Agent Gems system, what is the primary role of a 'Human-in-the-loop' checkpoint?",
+            question: "Which type of Google Opal agent is most appropriate to build for evaluating weaknesses in your research argumentation and methodology?",
             options: [
-              "To let the AI publish drafts to social media instantly.",
-              "To require manual review and approval from a human before the AI executes high-risk steps.",
-              "To translate visual prompts into binary code.",
-              "To count the exact words written.",
-              "To reset the local server configurations."
-            ],
-            answerIdx: 1
-          }
-        }
-      },
-      {
-        id: 3,
-        title: "Marketing Automation",
-        hours: "5 Hours",
-        desc: "Leverage visual agent orchestration with Antigravity to run competitor SWOT analysis, track trends, and compose SEO-optimized blogs.",
-        materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Total Duration: 20 Hours (5 sessions × 4 hours)",
-          difficulty: "Difficulty: Beginner (No coding background required)",
-          description: "Configure automated marketing machines that dynamically scout search trends, extract competitive highlights, and draft ready-to-publish content.",
-          sessions: [
-            {
-              title: "Session 3.1: Automated SEO Writing Workflows (2.5 Hours)",
-              bullets: [
-                "Real-time search tools: instructing agents to crawl search results for high-density keywords.",
-                "Dynamic outline builders: structuring rich outlines based on target competitor strategies.",
-                "Blog Automation: guiding agents to compile draft blogs adhering strictly to modern SEO standards."
-              ]
-            },
-            {
-              title: "Session 3.2: Competitor SWOT Automation (2.5 Hours)",
-              bullets: [
-                "Competitive analysis: instructing agents to scan rival product reviews and pricing pages otonomously.",
-                "SWOT Matrix Compiler: synthesizing competitor strengths and weaknesses into visual reports.",
-                "Direct reporting: routing completed SWOT briefings to email channels or Slack hubs."
-              ]
-            }
-          ],
-          quiz: {
-            question: "Which of the following represents a practical marketing use case for automated trend and competitor SWOT research?",
-            options: [
-              "Copy-pasting text manually between different browser tabs.",
-              "Setting up simple static text files.",
-              "Continuously scanning market changes, tracking competitor SEO, and compiling SWOT briefs otonomously.",
-              "Writing single one-time prompts in standard chats.",
-              "Printing physical paper flyers."
+              "Research Idea Agent",
+              "Book Planning Agent",
+              "Academic Reviewer Agent",
+              "Audio Overview Agent",
+              "Translation Agent"
             ],
             answerIdx: 2
           }
         }
       },
       {
-        id: 4,
-        title: "Business Operations with Google Opal",
-        hours: "5 Hours",
-        desc: "Prototype and design visual AI mini-apps using drag-and-drop visual workflows in Google Opal to automate customer outreach and score sales leads.",
+        id: 3,
+        title: "Building Research & Writing Skills with Google Antigravity",
+        hours: "4 Hours",
+        desc: "Develop professional SOP-based skills that can be reused across various AI agents.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Total Duration: 20 Hours (5 sessions × 4 hours)",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Total Duration: 20 Hours",
           difficulty: "Difficulty: Beginner (No coding background required)",
-          description: "Build visual AI workflows on Google Opal's experimental Labs canvas, assembling custom drag-and-drop mini-apps to route customer outreach otonomously.",
+          description: "Learn the difference between agents and skills, and how to design intelligent capabilities that adhere to SOP standards for accurate research analysis.",
           sessions: [
             {
-              title: "Session 4.1: Drag-and-Drop AI Mini-Apps in Google Opal (2.5 Hours)",
+              title: "Session 3.1: Core Structure of Professional Skills",
               bullets: [
-                "Visual workflow canvas: designing inputs, AI processing steps, and outputs without code.",
-                "Prototyping custom tools: building travel planners, custom generators, or writing aids in Google Opal.",
-                "Sharing workflows: compiling visual AI tools and instantly sharing them with your team via link."
+                "Understanding the difference between Skills, Agents, and Workflows.",
+                "Structuring professional skills using SKILL.md files, constraints, and examples.",
+                "Building a Research Gap Creator Skill."
               ]
             },
             {
-              title: "Session 4.2: Sales Outreach & Lead Scoring (2.5 Hours)",
+              title: "Session 3.2: Reusable Academic Skill Library",
               bullets: [
-                "Lead qualification: creating Opal mini-apps to score incoming client inquires otonomously.",
-                "Outreach automation: drafting highly tailored email follow-ups based on lead score data.",
-                "SMB operations: scaling repetitive administrative and client management tasks visually."
+                "Building a Literature Matrix Creator Skill for literature review synthesis.",
+                "Designing a Proposal Reviewer Skill for methodological evaluation.",
+                "Creating a Book Outline Creator and Academic Writing Skill."
               ]
             }
           ],
           quiz: {
-            question: "What is the primary operational advantage of using Google Opal in SMB operations?",
+            question: "What is the primary component used to design a structured 'skill' in Google Antigravity?",
             options: [
-              "Writing backend database SQL injection codes.",
-              "Designing and sharing visual, no-code AI mini-apps using drag-and-drop workflows.",
-              "Setting up physical servers.",
-              "Disabling security firewalls.",
-              "Running manual server-side scripts."
+              "Just using a regular chat input box.",
+              "A SKILL.md file containing instructions, constraints, and behavioral examples.",
+              "A Python-based backend script.",
+              "A local SQL database.",
+              "A visual drag-and-drop canvas."
+            ],
+            answerIdx: 1
+          }
+        }
+      },
+      {
+        id: 4,
+        title: "Autonomous Research & Book Publication Systems",
+        hours: "4 Hours",
+        desc: "Integrate NotebookLM, Google Opal, and Antigravity into a cohesive research and writing system.",
+        materials: {
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Total Duration: 20 Hours",
+          difficulty: "Difficulty: Beginner (No coding background required)",
+          description: "Unite all elements into a single Autonomous Research Operating System with human-in-the-loop quality control validation.",
+          sessions: [
+            {
+              title: "Session 4.1: Research Operating System",
+              bullets: [
+                "Connecting Knowledge, Agents, and Skills into a single orchestration pipeline.",
+                "Designing an automated Systematic Literature Review (SLR) and proposal drafting system.",
+                "Building an automated academic book writing system."
+              ]
+            },
+            {
+              title: "Session 4.2: Human-in-the-Loop Validation & AI Ethics",
+              bullets: [
+                "Applying Human-in-the-Loop validation for fact-checking and QA.",
+                "AI Ethics: reference hallucinations, citation fabrication, and AI authorship roles.",
+                "Aligning AI workflows with international journal policies (Elsevier, Nature)."
+              ]
+            }
+          ],
+          quiz: {
+            question: "Why is the 'Human-in-the-Loop Validation' stage critically important in an Autonomous Research System?",
+            options: [
+              "To technically slow down AI processing time.",
+              "To manually perform reference verification, fact-checking, and quality assurance of the written output.",
+              "To translate visual prompts into binary code.",
+              "To bypass system firewall security.",
+              "To perform automated database backups."
             ],
             answerIdx: 1
           }
@@ -481,43 +481,44 @@ const t = {
       },
       {
         id: 5,
-        title: "Low-Code Deployments & Launch",
-        hours: "3 Hours",
-        desc: "Integrate simple automation pipelines, monitor usage limits, and execute security checklists to launch your AI systems to production safely.",
+        title: "Final Capstone Project",
+        hours: "4 Hours",
+        desc: "Apply your knowledge by building a specialized academic operating system.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Total Duration: 20 Hours (5 sessions × 4 hours)",
-          difficulty: "Difficulty: Beginner (No coding background required)",
-          description: "Connect your tested Gems and Opal visual apps into visual low-code pipelines, reviewing costs and launching safe administrative tools.",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Total Duration: 20 Hours",
+          difficulty: "Difficulty: Intermediate",
+          description: "Select one specialization to build a functional academic OS: Research OS, Thesis OS, Book Authoring OS, or Academic Reviewer OS.",
           sessions: [
             {
-              title: "Session 5.1: Low-code Connections & Triggers (1.5 Hours)",
+              title: "Session 5.1: Track Selection & System Design",
               bullets: [
-                "Trigger events: running visual workflows automatically based on spreadsheet updates or new emails.",
-                "Visual connections: linking data between your email inbox, visual apps, and spreadsheets.",
-                "Visual error handlings: designing simple visual retry steps if visual nodes timeout."
+                "Track A: Building an automated research system.",
+                "Track B: Building a thesis companion system.",
+                "Track C: Building an automated book writing system.",
+                "Track D: Building an article and proposal review system."
               ]
             },
             {
-              title: "Session 5.2: Cost Monitoring & Pre-Launch Checklists (1.5 Hours)",
+              title: "Session 5.2: Presentation & Certification",
               bullets: [
-                "Cost control: pruning prompt steps to save on API overhead and query limits.",
-                "User acceptance tests: running team dry-runs to ensure accurate agent outcomes.",
-                "Security checklists: protecting visual workspace credentials and managing login access."
+                "Testing and refining the built academic operating system.",
+                "Reviewing system performance for real-world research needs.",
+                "Receiving the Certified Agentic AI Research & Authoring Practitioner certificate."
               ]
             }
           ],
           quiz: {
-            question: "Why should a business monitor daily query quotas and prompt costs prior to launch?",
+            question: "Which of the following is one of the Capstone Project track options in this course?",
             options: [
-              "To control running operational costs and guarantee a snappy, reliable user experience.",
-              "Because high prompt latency improves SEO search indexing.",
-              "Because visual webhooks require separate monthly hardware charges.",
-              "To disable local workspace firewalls.",
-              "To bypass Google Workspace login screens."
+              "Building an e-commerce checkout feature.",
+              "Building an Academic Reviewer Operating System.",
+              "Designing a local network firewall system.",
+              "Creating an automated video editor.",
+              "Writing a calculator script using Python."
             ],
-            answerIdx: 0
+            answerIdx: 1
           }
         }
       }
@@ -533,30 +534,30 @@ const t = {
     studentLoginBtn: "Login Peserta",
     badgeLabel: "Mini Course 20 Jam · 5 Sesi · Pemula hingga Menengah",
     heroTitlePrefix: "Agentic AI untuk ",
-    heroTitleHighlight: "Marketing & Bisnis",
-    heroDescription: "Belajar membangun agen AI otonom untuk riset pasar, produksi konten, customer support, analisis data penjualan, dan workflow bisnis harian. Tidak wajib coding. Fokus praktis: memahami arsitektur, merancang alur kerja agen, lalu menjalankannya dengan platform no-code/low-code.",
+    heroTitleHighlight: "Researchers & Authors",
+    heroDescription: "Pelajari cara membangun agen AI otonom untuk analisis literatur, rancang asisten proposal penelitian kustom, bangun skill penulisan akademik yang dapat digunakan kembali, dan orkestrasikan ekosistem penerbitan. Tidak wajib coding. Fokus praktis: kuasai workspace berbasis sumber data, bangun agen Opal, dan tulis skill dengan Antigravity.",
     heroCTAEnroll: "Daftar Sekarang via Google",
     heroCTALogin: "Login Peserta",
     statsHours: "Total Jam Belajar",
     statsModules: "Modul Praktis",
     statsFriendly: "Ramah Pemula",
     sandboxHeader: "Simulasi Interaktif",
-    sandboxSub: "Marketing Intelligence Engine",
+    sandboxSub: "Academic Research Assistant",
     sandboxPlay: "Jalankan Demo Alur Kerja AI",
     sandboxReset: "Reset Simulasi",
     curriculumHeader: "Kurikulum Terapan",
     curriculumTitle: "Dari Desain Arsitektur Dasar Hingga Deployment Siap Pakai.",
-    curriculumSub: "Struktur belajar dirancang bertahap: konsep dasar agen, arsitektur sistem, marketing automation, operasional bisnis, hingga orkestrasi cloud dan penghitungan biaya operasional.",
+    curriculumSub: "Struktur program dirancang bertahap: basis riset AI, agen akademik no-code, pustaka skill reusable, sistem penulisan otonom, hingga implikasi etika capstone.",
     competencyHeader: "Kompetensi Akhir",
     competencyTitle: "Pulang membawa cara kerja baru, bukan hanya kumpulan copy-paste prompt.",
-    competencyDescription: "Kursus intensif ini dirancang khusus untuk marketer, pemilik bisnis, manajer operasional, konsultan teknis, dosen/trainer, dan tim profesional yang ingin menerapkan AI secara strategis.",
+    competencyDescription: "Program ini dirancang khusus untuk dosen, peneliti, penulis, mahasiswa, dan profesional akademik yang ingin menerapkan kecerdasan buatan (AI) secara strategis dalam penelitian ilmiah dan alur kerja publikasi mereka.",
     competencyCTAEnroll: "Buat Akun Baru",
     competencyCTALogin: "Portal Peserta",
-    useCasesHeader: "Business Use Cases",
-    useCasesTitle: "Solusi AI yang dirancang untuk pekerjaan bisnis nyata harian.",
-    useCasesDescription: "Lupakan latihan coding teoretis. Setiap use case dibangun langsung di sekitar tanggung jawab operasional penting: riset pasar instan, optimasi konten SEO, kualifikasi prospek penjualan, analitik stok pintar, dan keputusan operasional cepat.",
-    ctaHeader: "Siap membangun alur kerja multi-agent AI pertama Anda?",
-    ctaDescription: "Daftar di Lensetek Certification Program, masuk ke akademi simulasi digital kami, dan kuasai framework Agentic AI yang dirancang khusus untuk skala bisnis Anda.",
+    useCasesHeader: "Academic Use Cases",
+    useCasesTitle: "Solusi AI yang dirancang untuk alur kerja akademik nyata harian.",
+    useCasesDescription: "Lupakan latihan coding teoretis. Setiap use case dibangun langsung di sekitar tanggung jawab akademik penting: sintesis literatur otomatis, identifikasi gap riset, metodologi proposal, outline bab naskah, dan penulisan draf berbasis etika.",
+    ctaHeader: "Siap membangun sistem riset dan penulisan akademik otonom Anda?",
+    ctaDescription: "Daftar di Lensetek Certification Program, masuk ke akademi simulasi digital kami, dan kuasai framework Agentic AI yang dirancang khusus untuk riset ilmiah dan kepengaruhan akademik.",
     ctaBtnEnroll: "Daftar Sekarang via Google",
     classroomHeader: "Kelas Belajar",
     classroomDesc: "Selamat datang di Kelas Agentic AI Anda. Pelajari modul utama, selesaikan kuis evaluasi singkat, dan jalankan agen server-side Anda secara otonom.",
@@ -574,7 +575,7 @@ const t = {
     quizRetry: "Coba Lagi",
     certTitle: "Sertifikat Kelulusan Resmi",
     certPresenter: "Sertifikat ini dengan bangga dipersembahkan kepada",
-    certBody: "Atas keberhasilannya menguasai konsep dan rekayasa parameter Agentic AI untuk Marketing & Bisnis, menyelesaikan 5 sesi verifikasi teknis kompetensi, serta mendemonstrasikan kecakapan praktis dalam Orkestrasi Agen AI pada sisi server.",
+    certBody: "Atas keberhasilannya menguasai konsep dan rekayasa parameter Agentic AI Mastery for Researchers & Authors, menyelesaikan 5 sesi verifikasi teknis kompetensi, serta mendemonstrasikan kecakapan praktis dalam Orkestrasi Agen AI pada sisi server.",
     certIssued: "Penerbit Sertifikat",
     certDate: "Tanggal Kelulusan",
     certPrint: "Cetak Sertifikat",
@@ -602,44 +603,44 @@ const t = {
     backToStudy: "Kembali Belajar",
     classroomBtn: "Masuk ke Kelas",
     curriculumBtn: "Lihat Kurikulum",
-    modulesList: [
+        modulesList: [
       {
         id: 1,
-        title: "Fondasi Agentic AI & Pergeseran Paradigma",
-        hours: "3 Jam",
-        desc: "Memahami perbedaan mendasar antara AI biasa dengan asisten AI kustom (Gemini Gems) serta menyusun kerangka berpikir otonom langkah-demi-langkah tanpa coding.",
+        title: "AI Research Brain dengan NotebookLM",
+        hours: "4 Jam",
+        desc: "Membangun basis pengetahuan penelitian yang terorganisasi dan memanfaatkan AI untuk memahami berbagai sumber akademik secara cepat.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Durasi Total: 20 Jam (5 sesi × 4 jam)",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Durasi Total: 20 Jam",
           difficulty: "Tingkat Kesulitan: Pemula (Tidak wajib latar belakang coding)",
-          description: "Kurikulum ini dirancang dengan pendekatan praktis no-code yang ramah pemula. Anda akan langsung belajar menggunakan Gemini Gems, Google Opal, dan Antigravity untuk membangun asisten AI guna menyelesaikan tugas-tugas bisnis nyata.",
+          description: "Modul ini membahas cara mengatasi information overload, memahami cara kerja NotebookLM, membangun knowledge base penelitian, dan melakukan analisis literatur tingkat lanjut.",
           sessions: [
             {
-              title: "Sesi 1.1: Chatbot Biasa vs Asisten AI Kustom (1.5 Jam)",
+              title: "Sesi 1.1: Tantangan Penelitian & Dasar-Dasar NotebookLM",
               bullets: [
-                "Keterbatasan chat AI standar: mengetik prompt berulang dan menyalin teks manual.",
-                "Gemini Gems Kustom: menyusun instruksi sistem dasar, kepribadian peran, dan target tujuan bisnis.",
-                "Anatomi Asisten AI: mesin utama (Brain), penyimpanan riwayat (Context), dan modul interaksi."
+                "Tantangan information overload dan risiko halusinasi pada AI generatif.",
+                "Cara kerja NotebookLM dengan pendekatan source-grounded AI.",
+                "Membuat workspace penelitian pertama dan memahami batasan AI."
               ]
             },
             {
-              title: "Sesi 1.2: Kerangka Berpikir Terstruktur / Chain-of-Thought (1.5 Jam)",
+              title: "Sesi 1.2: Analisis Literatur & Penemuan Pola",
               bullets: [
-                "Memecah proses operasional bisnis: memetakan langkah-langkah logika secara runtut.",
-                "Logika ReAct: membimbing asisten AI untuk memikirkan solusi, mencari info eksternal, dan merangkum hasil secara terstruktur.",
-                "Studi Kasus: Membuat alur kerja otonom untuk riset SEO cepat dan analisis SWOT instan."
+                "Mengunggah dan mengorganisasi jurnal, buku, serta laporan penelitian.",
+                "Sintesis literatur, komparasi jurnal, dan identifikasi temuan utama.",
+                "Menggunakan Audio Overview untuk pembelajaran cepat dari banyak referensi."
               ]
             }
           ],
           quiz: {
-            question: "Fitur Gemini manakah yang memungkinkan Anda membuat asisten AI kustom berdasarkan peran tertentu dengan instruksi bawaan yang telah ditetapkan?",
+            question: "Apakah keuntungan utama menggunakan NotebookLM untuk penelitian akademik dibandingkan dengan chatbot standar?",
             options: [
-              "Google Workspace Docs",
-              "Gemini Gems (Asisten kustom peran khusus)",
-              "Google Custom Search API",
-              "Chrome DevTools",
-              "Database SQL Lokal"
+              "NotebookLM dapat menulis buku secara otomatis tanpa input.",
+              "NotebookLM mendasarkan jawabannya secara eksklusif pada referensi yang Anda unggah untuk mencegah halusinasi.",
+              "NotebookLM terhubung langsung ke media sosial.",
+              "NotebookLM mengeksekusi kueri SQL lokal.",
+              "NotebookLM menerjemahkan bahasa tanpa akses internet."
             ],
             answerIdx: 1
           }
@@ -647,125 +648,125 @@ const t = {
       },
       {
         id: 2,
-        title: "Workflow & Kolaborasi Multi-Agent",
+        title: "Membangun Agen Produktivitas Akademik dengan Google Opal",
         hours: "4 Jam",
-        desc: "Rancang kolaborasi tim asisten AI Gems dan bangun pos pemeriksaan kualitas kerja (guardrails) untuk hasil bisnis terbaik.",
+        desc: "Membangun agen AI tanpa coding untuk mengotomatisasi aktivitas penelitian dan penulisan akademik.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Durasi Total: 20 Jam (5 sesi × 4 jam)",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Durasi Total: 20 Jam",
           difficulty: "Tingkat Kesulitan: Pemula (Tidak wajib latar belakang coding)",
-          description: "Pelajari cara menghubungkan beberapa asisten Gemini Gems menjadi satu tim kerja yang padu, di mana masing-masing asisten saling mengoreksi draf dan memindahkan hasil tulisan secara berkesinambungan.",
+          description: "Pelajari cara mengubah obrolan biasa menjadi alur kerja agen otomatis di Google Opal, seperti Asisten Ide Riset, Asisten Proposal, dan Asisten Perencanaan Buku.",
           sessions: [
             {
-              title: "Sesi 2.1: Merancang Spesialisasi Peran Gems (2 Jam)",
+              title: "Sesi 2.1: Dari Chatbot Menjadi Agen yang Bekerja",
               bullets: [
-                "Menyusun instruksi rigid untuk peran: Spesialis SEO, Copywriter Iklan, dan Editor Tata Bahasa.",
-                "Membangun batasan instruksi (guardrails) agar asisten Gems tetap fokus pada target dan anti-repetitif.",
-                "Format output terstruktur: mendesain agar Gems selalu mengembalikan data dalam tata letak tabel rapi."
+                "Pergeseran paradigma dari chatbot satu langkah ke alur kerja agen multi-langkah.",
+                "Memahami fitur Google Opal dan cara membangun aplikasi mini.",
+                "Membangun Research Idea Agent untuk memetakan fenomena dan research gap."
               ]
             },
             {
-              title: "Sesi 2.2: Kolaborasi Tim Gems & Reviewer (2 Jam)",
+              title: "Sesi 2.2: Agen Akademik Tingkat Lanjut",
               bullets: [
-                "Supervisor Gems: membangun Gems pengawas yang mengulas pekerjaan asisten lain dan merutekan tugas selanjutnya.",
-                "Keberlanjutan konteks: mengalirkan draf kasar secara mulus dari asisten Writer ke Editor.",
-                "Human-in-the-loop: menyisipkan pos persetujuan manusia sebelum draf akhir dipublikasikan secara komersial."
+                "Membangun Proposal Assistant Agent untuk latar belakang dan perumusan masalah.",
+                "Membangun Academic Reviewer Agent untuk mengevaluasi kelemahan argumen proposal.",
+                "Merancang Book Planning Agent berdasarkan silabus dan modul pembelajaran."
               ]
             }
           ],
           quiz: {
-            question: "Dalam tim kolaborasi asisten Gems, apakah fungsi dari pos 'Human-in-the-loop'?",
+            question: "Jenis agen Google Opal manakah yang paling tepat dibangun untuk mengevaluasi kelemahan dalam argumentasi dan metodologi penelitian Anda?",
             options: [
-              "Mengizinkan AI langsung memposting tulisan ke sosial media secara otomatis.",
-              "Mewajibkan tinjauan dan persetujuan manual dari pengguna manusia sebelum AI mengeksekusi langkah penting.",
-              "Menerjemahkan instruksi visual menjadi kode biner.",
-              "Menghitung jumlah total kata tulisan.",
-              "Merestart server lokal."
-            ],
-            answerIdx: 1
-          }
-        }
-      },
-      {
-        id: 3,
-        title: "Otomatisasi Pemasaran (Marketing Automation)",
-        hours: "5 Jam",
-        desc: "Gunakan asisten cerdas Antigravity untuk riset tren pasar otonom, analisis SWOT kompetitor, dan menulis draf konten SEO otomatis.",
-        materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Durasi Total: 20 Jam (5 sesi × 4 jam)",
-          difficulty: "Tingkat Kesulitan: Pemula (Tidak wajib latar belakang coding)",
-          description: "Konfigurasikan sistem pemasaran terotomatisasi yang secara mandiri memantau tren Google, membaca kompetitor, dan menyusun draf konten siap pakai.",
-          sessions: [
-            {
-              title: "Sesi 3.1: Alur Kerja Konten SEO Otomatis (2.5 Jam)",
-              bullets: [
-                "Alat pencari real-time: menginstruksikan asisten memindai volume kata kunci dan data tren pasar terbaru.",
-                "Perancang outline dinamis: menyusun struktur artikel kaya informasi berdasarkan konten pesaing teratas.",
-                "Pembuatan blog instan: membimbing asisten merakit draf artikel komprehensif yang mematuhi standar SEO modern."
-              ]
-            },
-            {
-              title: "Sesi 3.2: Otomatisasi Analisis SWOT Pesaing (2.5 Jam)",
-              bullets: [
-                "Cek kompetitor: menginstruksikan asisten memetakan kelebihan dan harga produk pesaing otonom.",
-                "SWOT Matrix Compiler: merangkum temuan menjadi tabel SWOT (Kekuatan, Kelemahan, Peluang, Ancaman).",
-                "Laporan otomatis: menyalurkan hasil ringkasan briefing analisis SWOT langsung ke grup Slack atau kotak email."
-              ]
-            }
-          ],
-          quiz: {
-            question: "Manakah di bawah ini yang merupakan contoh pemanfaatan asisten AI otonom dalam otomatisasi pemasaran?",
-            options: [
-              "Menyalin teks manual secara berulang antar-tab browser.",
-              "Menulis draf statis satu kali.",
-              "Pemantauan tren pasar secara kontinu, pelacakan SEO pesaing otonom, dan pembuatan ringkasan laporan SWOT otomatis.",
-              "Membuat prompt biasa dalam chat sekali pakai.",
-              "Mencetak selebaran promosi kertas fisik."
+              "Research Idea Agent",
+              "Book Planning Agent",
+              "Academic Reviewer Agent",
+              "Audio Overview Agent",
+              "Translation Agent"
             ],
             answerIdx: 2
           }
         }
       },
       {
-        id: 4,
-        title: "Operasional Bisnis dengan Google Opal",
-        hours: "5 Jam",
-        desc: "Rancang visual workflow otonom dan prototype aplikasi mini AI untuk kualifikasi prospek penjualan serta otomatisasi email operasional UMKM menggunakan drag-and-drop di Google Opal.",
+        id: 3,
+        title: "Membangun Skill Riset & Penulisan dengan Google Antigravity",
+        hours: "4 Jam",
+        desc: "Mengembangkan skill profesional berbasis SOP yang dapat digunakan ulang oleh berbagai agen AI.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Durasi Total: 20 Jam (5 sesi × 4 jam)",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Durasi Total: 20 Jam",
           difficulty: "Tingkat Kesulitan: Pemula (Tidak wajib latar belakang coding)",
-          description: "Bangun visual workflow otonom di kanvas Labs Google Opal, merakit aplikasi mini drag-and-drop kustom untuk kualifikasi prospek secara mandiri.",
+          description: "Pelajari perbedaan antara agen dan skill, serta bagaimana merancang kemampuan cerdas yang mematuhi standar SOP untuk analisis penelitian yang akurat.",
           sessions: [
             {
-              title: "Sesi 4.1: Membuat Aplikasi Mini AI Drag-and-Drop di Google Opal (2.5 Jam)",
+              title: "Sesi 3.1: Struktur Inti dari Skill Profesional",
               bullets: [
-                "Kanvas alur visual: mendesain kotak input pengguna, proses berpikir AI, dan output akhir tanpa menulis kode.",
-                "Membuat prototype asisten kustom: merakit alat rencana perjalanan, perangkum data, atau alat menulis otomatis di Google Opal.",
-                "Membagikan aplikasi mini: menghasilkan link akses instan untuk dibagikan ke tim kerja Anda."
+                "Memahami perbedaan antara Skill, Agent, dan Workflow.",
+                "Menyusun skill profesional menggunakan file SKILL.md, batasan, dan contoh.",
+                "Membangun Research Gap Creator Skill."
               ]
             },
             {
-              title: "Sesi 4.2: Kualifikasi Prospek & Email Otomatis (2.5 Jam)",
+              title: "Sesi 3.2: Pustaka Skill Akademik Reusable",
               bullets: [
-                "Penyaringan prospek otomatis: membuat alur kerja Opal untuk membaca dan memberikan skor potensi penjualan klien.",
-                "Otomatisasi pesan follow-up: merancang asisten pembuat draf email penawaran personal berdasarkan skor prospek.",
-                "Skalabilitas UMKM: mempercepat pekerjaan administratif rutin dan pengelolaan email pelanggan secara visual."
+                "Membangun Literature Matrix Creator Skill untuk sintesis tinjauan pustaka.",
+                "Merancang Proposal Reviewer Skill untuk evaluasi metodologis.",
+                "Membuat Book Outline Creator dan Academic Writing Skill."
               ]
             }
           ],
           quiz: {
-            question: "Apa fungsi utama dari Google Opal dalam membantu operasional bisnis UMKM?",
+            question: "Apakah komponen utama yang digunakan untuk merancang 'skill' terstruktur di Google Antigravity?",
             options: [
-              "Menulis query database SQL yang rumit.",
-              "Merancang dan membagikan aplikasi mini AI no-code melalui alur kerja visual drag-and-drop.",
-              "Mengatur penyimpanan kotak barang di gudang.",
-              "Menonaktifkan sistem keamanan firewall internet.",
-              "Menjalankan skrip pemrograman server."
+              "Hanya menggunakan kotak input chat biasa.",
+              "File SKILL.md yang berisi instruksi, batasan, dan contoh perilaku.",
+              "Skrip backend berbasis Python.",
+              "Database SQL lokal.",
+              "Kanvas visual drag-and-drop."
+            ],
+            answerIdx: 1
+          }
+        }
+      },
+      {
+        id: 4,
+        title: "Sistem Riset Otonom & Publikasi Buku",
+        hours: "4 Jam",
+        desc: "Mengintegrasikan NotebookLM, Google Opal, dan Antigravity menjadi sistem penelitian dan penulisan yang lengkap.",
+        materials: {
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Durasi Total: 20 Jam",
+          difficulty: "Tingkat Kesulitan: Pemula (Tidak wajib latar belakang coding)",
+          description: "Satukan semua elemen ke dalam satu Sistem Operasi Penelitian Otonom dengan validasi kontrol kualitas human-in-the-loop.",
+          sessions: [
+            {
+              title: "Sesi 4.1: Research Operating System",
+              bullets: [
+                "Menghubungkan Knowledge, Agent, dan Skill ke dalam satu pipa orkestrasi.",
+                "Merancang Systematic Literature Review (SLR) otomatis dan sistem draf proposal.",
+                "Membangun sistem penulisan buku akademik otomatis."
+              ]
+            },
+            {
+              title: "Sesi 4.2: Validasi Human-in-the-Loop & Etika AI",
+              bullets: [
+                "Menerapkan validasi Human-in-the-Loop untuk pemeriksaan fakta dan QA.",
+                "Etika AI: halusinasi referensi, fabrikasi sitasi, dan peran kepengaruhan AI.",
+                "Menyelaraskan alur kerja AI dengan kebijakan jurnal internasional (Elsevier, Nature)."
+              ]
+            }
+          ],
+          quiz: {
+            question: "Mengapa tahap 'Validasi Human-in-the-Loop' sangat penting dalam Sistem Penelitian Otonom?",
+            options: [
+              "Untuk memperlambat waktu pemrosesan AI secara teknis.",
+              "Untuk melakukan verifikasi referensi, pemeriksaan fakta, dan jaminan kualitas output secara manual.",
+              "Untuk menerjemahkan prompt visual menjadi kode biner.",
+              "Untuk melewati keamanan firewall sistem.",
+              "Untuk melakukan pencadangan database otomatis."
             ],
             answerIdx: 1
           }
@@ -773,43 +774,44 @@ const t = {
       },
       {
         id: 5,
-        title: "Orkestrasi Low-Code & Checklist Rilis",
-        hours: "3 Jam",
-        desc: "Hubungkan pipa otomatisasi visual sederhana, kelola kuota kueri harian, dan jalankan checklist keamanan rilis produksi.",
+        title: "Final Capstone Project",
+        hours: "4 Jam",
+        desc: "Terapkan pengetahuan Anda dengan membangun sistem operasi akademik khusus.",
         materials: {
-          institution: "Lensetek International, LLC. United States",
-          course: "Mini Course: Agentic AI for Marketing & Business",
-          duration: "Durasi Total: 20 Jam (5 sesi × 4 jam)",
-          difficulty: "Tingkat Kesulitan: Pemula (Tidak wajib latar belakang coding)",
-          description: "Sambungkan asisten Gems dan aplikasi visual Opal Anda ke pipa integrasi visual low-code untuk menyederhanakan tugas rutin harian Anda secara aman.",
+          institution: "Lensetek International, LLC.",
+          course: "Agentic AI Mastery for Researchers & Authors",
+          duration: "Durasi Total: 20 Jam",
+          difficulty: "Tingkat Kesulitan: Menengah",
+          description: "Pilih salah satu spesialisasi untuk membangun OS akademik yang berfungsi: Research OS, Thesis OS, Book Authoring OS, atau Academic Reviewer OS.",
           sessions: [
             {
-              title: "Sesi 5.1: Integrasi Koneksi & Pemicu Otomatis (1.5 Jam)",
+              title: "Sesi 5.1: Pemilihan Jalur & Desain Sistem",
               bullets: [
-                "Pemicu alur kerja (Triggers): menjalankan otomatisasi ketika ada baris tabel baru di worksheet atau email masuk.",
-                "Penyambungan visual: mengalirkan data secara otomatis antar-folder email, dokumen kustom, dan tabel.",
-                "Penanganan error visual: mendesain langkah pengulangan (retry) otomatis sederhana jika ada koneksi terputus."
+                "Jalur A: Membangun sistem penelitian otomatis.",
+                "Jalur B: Membangun sistem pendamping tesis.",
+                "Jalur C: Membangun sistem penulisan buku otomatis.",
+                "Jalur D: Membangun sistem peninjau artikel dan proposal."
               ]
             },
             {
-              title: "Sesi 5.2: Monitoring Kuota & Checklist Rilis (1.5 Jam)",
+              title: "Sesi 5.2: Presentasi & Sertifikasi",
               bullets: [
-                "Audit biaya & token: merapikan prompt untuk memangkas batasan token dan batas kueri harian.",
-                "Uji coba tim (UAT): menjalankan simulasi draf buatan asisten bersama tim untuk memvalidasi ketepatan kerja.",
-                "Checklist keamanan: mengamankan kredensial pemicu visual dan mengatur hak akses akun tim."
+                "Menguji dan menyempurnakan sistem operasi akademik yang dibangun.",
+                "Meninjau kinerja sistem untuk kebutuhan penelitian dunia nyata.",
+                "Menerima sertifikat Certified Agentic AI Research & Authoring Practitioner."
               ]
             }
           ],
           quiz: {
-            question: "Mengapa pemilik bisnis wajib memperkirakan batas kuota kueri dan biaya token sebelum meluncurkan otomatisasi asisten AI?",
+            question: "Manakah di bawah ini yang merupakan salah satu pilihan jalur Proyek Capstone dalam kursus ini?",
             options: [
-              "Untuk mengontrol biaya operasional bulanan dan menjamin pengalaman pengguna yang andal dan cepat.",
-              "Karena latensi yang lama mempercepat optimasi pencarian Google.",
-              "Karena pemicu visual menuntut penyewaan hardware server fisik tambahan.",
-              "Untuk menonaktifkan firewall komputer lokal.",
-              "Untuk melewati layar verifikasi Google Workspace."
+              "Membangun fitur checkout e-commerce.",
+              "Membangun Academic Reviewer Operating System.",
+              "Merancang sistem firewall jaringan lokal.",
+              "Membuat editor video otomatis.",
+              "Menulis skrip kalkulator menggunakan Python."
             ],
-            answerIdx: 0
+            answerIdx: 1
           }
         }
       }
@@ -821,101 +823,101 @@ const sessionExplanations = {
   EN: {
     1: [
       {
-        concept: "Gemini Gems allow business users to design dedicated, custom role personas without coding. By defining a Gem's profile, system instructions, and target output style, you bypass generic chat limitations and build a reliable operational tool.",
-        architecture: "Generic ChatGPT ──> Customize Gemini Gem Profile ──> Direct System Instructions ──> Specialized AI Assistant",
+        concept: "NotebookLM acts as a source-grounded research memory brain. It synthesizes literature, highlights key findings, and extracts patterns from uploaded journals, books, and reports while strictly preventing AI hallucinations.",
+        architecture: "Upload Literature References ──> Source-Grounded Comprehension ──> Literature Synthesis ──> AI Gap Discovery",
         checklist: [
-          "Create your first custom Gem in the Gemini interface.",
-          "Write a strict system instruction profile defining boundaries and roles.",
-          "Test custom outputs and analyze how specific persona guidelines shape responses."
+          "Create a dedicated research source workspace in NotebookLM.",
+          "Upload academic papers, reports, or research notes into the dashboard.",
+          "Generate comparative literature grids and discover key research gap areas."
         ]
       },
       {
-        concept: "Chain-of-Thought (CoT) prompting trains Gems to outline and explain their steps before presenting an answer. ReAct (Reasoning + Acting) guides them to evaluate if they need to call web search tools, search information otonomously, and refine drafts based on actual observations.",
-        architecture: "User Prompt ──> CoT Planning Step ──> Real-time Search Check ──> Analyze Snippets ──> High-Quality Report",
+        concept: "Utilize Audio Overview features in NotebookLM to rapidly ingest literature. Convert complex, multi-journal reference lists into audio discussions to comprehend key hypotheses and academic debates.",
+        architecture: "Multi-Source References ──> Audio Overview Engine ──> Synthetic Discussion Podcast ──> Rapid Insight",
         checklist: [
-          "Apply CoT outlines to your Gem prompt instructions.",
-          "Test real-time search tool behaviors within Gems.",
-          "Compile a SEO trend briefing otonomously using search-enabled Gems."
+          "Enable Audio Overview inside your NotebookLM reference collection.",
+          "Listen to structural arguments and synthesize cross-journal comparisons.",
+          "Extract key notes to compile into your thesis or book outline draft."
         ]
       }
     ],
     2: [
       {
-        concept: "Structure a multi-persona pipeline where each Gem plays a contrasting, rigid role. The SEO Gem harvests trends, the Copywriter Gem drafts CTAs, and the Editor Gem enforces grammar rules to guarantee outstanding content output.",
-        architecture: "Define SEO Persona ──> Design Copywriter Persona ──> Design Editor Persona ──> Unified Output Schema",
+        concept: "Google Opal allows researchers to build no-code, multi-step productivity agents. Transition from simple prompting to designing specialized assistants for gap analysis, proposal drafting, and reviewer workflows.",
+        architecture: "Define Custom Inputs ──> Opal Multi-Step Workflow ──> Specialized Academic Agent ──> Proposal Outline",
         checklist: [
-          "Configure strict system persona instruction files for Gems.",
-          "Enforce clear markdown output blueprints for consistent UI layouts.",
-          "Apply response limits and iteration limits as a guardrail."
+          "Build a customized mini-application inside the Google Opal canvas.",
+          "Design inputs for research phenomena and target variables.",
+          "Create a Research Idea Agent that dynamically generates titles and gap outlines."
         ]
       },
       {
-        concept: "Coordinate Gems to work in sequence, where one Gem's output becomes the input for the next. Insert a supervisor reviewer Gem to audit final drafts and implement a human approval step before anything gets launched publicly.",
-        architecture: "SEO Gem Output ──> Writer Gem Drafting ──> Editor Gem Audit ──> User Approval Verification Screen",
+        concept: "Deploy academic reviewer and reviewer proposal agents. Provide academic feedback on drafts by highlighting methodological issues, arguable claims, and citation gaps automatically.",
+        architecture: "Draft Proposal ──> Academic Reviewer Agent ──> Argumentation Quality Check ──> Suggested Revisions",
         checklist: [
-          "Connect Gems sequentially to pass text drafts between personas.",
-          "Set up context-passing blueprints to maintain document details.",
-          "Design an 'Approve / Reject' visual checkpoint for manual human reviews."
+          "Configure an Academic Reviewer Agent in Google Opal.",
+          "Input a draft background section or research proposal outline.",
+          "Analyze the structural weaknesses, argument critiques, and improvement checklists."
         ]
       }
     ],
     3: [
       {
-        concept: "Use the Antigravity assistant to search search trends, extract competitive landing page keywords, and draft long-form markdown blog articles that fit modern SEO best practices automatically.",
-        architecture: "Search Trends ──> Crawl Competitor Headers ──> Antigravity SEO Outliner ──> Draft Rich SEO Article",
+        concept: "Google Antigravity enables researchers to build reusable academic skills. By designing standard operating procedures (SOPs) inside SKILL.md configurations, you enforce quality controls on AI writing and gap extraction.",
+        architecture: "Draft SKILL.md Instructions ──> Set Rigid Constraints & Examples ──> Reusable Gap Creator Skill",
         checklist: [
-          "Scout competitor keyword densities using search-enabled agents.",
-          "Draft article structures dynamically using outlined SEO blueprints.",
-          "Generate finished SEO-optimized blog drafts automatically."
+          "Create a structured skill directory using SKILL.md rules.",
+          "Define behavioral constraints, academic tone guidelines, and output formats.",
+          "Test the Research Gap Creator Skill on modern academic papers."
         ]
       },
       {
-        concept: "Instruct Antigravity to gather competitive specifications, synthesize strengths and threats into a clean SWOT grid, and route finished executive briefs directly to Slack channels using simple automation pathways.",
-        architecture: "Gather Rival Data ──> Compile SWOT Grid ──> Format PDF / Brief ──> Automatic slack Delivery Channel",
+        concept: "Build a literature matrix and outline builder skill. Automatically parse sources and synthesize them into a literature comparison grid that maps directly into your academic thesis layout.",
+        architecture: "Parse Academic Literature ──> Literature Matrix Skill ──> Formatted Synthesis Grid ──> Thesis Draft",
         checklist: [
-          "Program Antigravity to run competitor analysis sweeps.",
-          "Customize visual SWOT matrices and reporting templates.",
-          "Route finished briefs directly to communications channels like Slack."
+          "Configure a Literature Matrix Creator Skill in Google Antigravity.",
+          "Input selected research abstracts to generate structured comparison grids.",
+          "Format results into academic outline tables ready for publication."
         ]
       }
     ],
     4: [
       {
-        concept: "Build visual AI mini-apps inside Google Opal's Labs canvas. Map input boxes, drag-and-drop Gemini-powered processing steps, and outline custom output views to create travel planners, data compilers, or outline tools visually.",
-        architecture: "Map Input Box ──> Drag-and-drop Gemini Step ──> Connect Workflow Logic ──> Instant App Share Link",
+        concept: "Orchestrate an end-to-end Autonomous Research Operating System. Connect source references to Opal agents and Antigravity skills to build a pipeline that takes you from raw PDFs to a drafted literature review.",
+        architecture: "NotebookLM Source Brain ──> Opal Proposal Agent ──> Antigravity Writing Skill ──> Systematic Literature Review",
         checklist: [
-          "Design custom inputs and outputs visually on the Google Opal canvas.",
-          "Map drag-and-drop AI steps to structure data processing workflows.",
-          "Generate app share links to distribute visual AI tools with your team."
+          "Connect NotebookLM research findings to Opal workflow nodes.",
+          "Map the automated flow of data from literature matrices to outline builders.",
+          "Generate a first draft of a Systematic Literature Review (SLR) autonomously."
         ]
       },
       {
-        concept: "Create a custom Opal app to score incoming customer inquiries otonomously based on budget and goals. Have Gemini draft personalized email follow-ups automatically to scale customer service for small businesses.",
-        architecture: "Client Inquiry Form ──> Opal Lead Scorer step ──> Custom Email Drafter step ──> Ready-to-send Email draft",
+        concept: "Enforce ethical AI rules and human-in-the-loop checkpoints. Audit draft citations for hallucinations, verify references, and align publication drafts with international journal policies (Elsevier, Nature, IEEE).",
+        architecture: "Autonomous Draft ──> Reference & Fact Check ──> Journal Compliance Audit ──> Human Approval Rilis",
         checklist: [
-          "Build a lead filtering app on Opal's visual drag-and-drop canvas.",
-          "Configure automated personalized email outreach and follow-up templates.",
-          "Scale daily customer management tasks visually without code."
+          "Insert strict fact-checking and citation verification blocks in the pipeline.",
+          "Audit AI output for citation fabrication or misleading summaries.",
+          "Establish a manual validation checkpoint before submitting to international journals."
         ]
       }
     ],
     5: [
       {
-        concept: "Connect Gems and Opal visual tools to visual low-code pipelines. Trigger automations to run otonomously whenever a customer sends an email or fills out a form, defining simple visual retry loops to manage minor connection drops.",
-        architecture: "Email Trigger event ──> Launch Visual Gems pipeline ──> Process Assets ──> Visual error handler step",
+        concept: "Select your Capstone specialization. Select Track A (Research OS), Track B (Thesis OS), Track C (Book Authoring OS), or Track D (Academic Reviewer OS) to build a functional workspace.",
+        architecture: "Select Capstone Specialization ──> Design System Orchestration ──> Deploy Academic OS ──> Showcase",
         checklist: [
-          "Configure visual trigger events from external platforms like sheets or email.",
-          "Map visual low-code automation paths to transfer data.",
-          "Design visual error handling and retry steps to manage API timeouts."
+          "Select one track and design the core workflow architecture.",
+          "Integrate NotebookLM source maps, Opal agents, and Antigravity skills.",
+          "Build and test your academic workspace on real-world reference datasets."
         ]
       },
       {
-        concept: "Execute pre-launch audits. Track daily query quotas and prompt sizes to manage running token fees, execute team dry-runs (UAT) to confirm output quality, and complete the security checklist to protect workspace credentials.",
-        architecture: "Track Daily Queries ──> Prune Prompt steps ──> Team Dry-Runs (UAT) ──> Secure Workspace Credentials",
+        concept: "Complete the capstone evaluation. Audit daily query limits, secure API endpoints, run dry-runs with peers, and obtain your Certified Agentic AI Research & Authoring Practitioner credential.",
+        architecture: "Audit Token Quotas ──> Run Peer UAT dry-runs ──> Verify Security ──> Professional Certification",
         checklist: [
-          "Audit prompt token fees and daily query costs.",
-          "Run user acceptance test (UAT) dry-runs with team members.",
-          "Complete the 10-point launch checklist covering access control and keys."
+          "Verify the execution costs and token boundaries of your system.",
+          "Run peer tests and correct bugs in the agent flow.",
+          "Present your system to earn the Lensetek Practitioner certification."
         ]
       }
     ]
@@ -923,101 +925,101 @@ const sessionExplanations = {
   ID: {
     1: [
       {
-        concept: "Gemini Gems memungkinkan pengguna bisnis merancang persona kustom khusus tanpa coding. Dengan mendefinisikan instruksi sistem, kepribadian peran, dan gaya output, Anda dapat melewati batasan chat AI standar dan membuat alat kerja yang andal.",
-        architecture: "Chat AI Generik ──> Kustomisasi Profil Gemini Gems ──> Instruksi Sistem Rigid ──> Asisten AI Spesialis",
+        concept: "NotebookLM berfungsi sebagai otak memori penelitian berbasis sumber (source-grounded). Platform ini mensintesis literatur, menyoroti temuan utama, dan mengekstrak pola dari jurnal/buku yang diunggah secara akurat.",
+        architecture: "Unggah Dokumen Referensi ──> Pemahaman Berbasis Sumber ──> Sintesis Literatur ──> Identifikasi Research Gap",
         checklist: [
-          "Buat Gemini Gems pertama Anda melalui antarmuka Gemini.",
-          "Tulis instruksi sistem yang mendetail untuk menetapkan tugas dan batasan Gems.",
-          "Uji respon kustom Gems dan evaluasi seberapa konsisten persona AI tersebut."
+          "Buat workspace sumber penelitian khusus di NotebookLM.",
+          "Unggah makalah akademis, tesis, atau laporan ke dashboard NotebookLM.",
+          "Hasilkan matriks komparasi literatur dan identifikasi area research gap."
         ]
       },
       {
-        concept: "Prompt Chain-of-Thought (CoT) melatih Gems untuk menjabarkan langkah berpikir mereka sebelum memberikan jawaban. Logika ReAct membimbing asisten AI untuk memikirkan solusi, memanggil alat pencari web otonom, dan merevisi draf berdasarkan data nyata.",
-        architecture: "Prompt User ──> Perencanaan Langkah CoT ──> Pencarian Web Real-time ──> Observasi Data ──> Laporan Berkualitas",
+        concept: "Manfaatkan fitur Audio Overview di NotebookLM untuk mencerna literatur secara cepat. Ubah daftar pustaka multi-jurnal yang kompleks menjadi diskusi audio interaktif untuk memahami hipotesis utama.",
+        architecture: "Referensi Multi-Sumber ──> Audio Overview Engine ──> Diskusi Podcast Sintetis ──> Pemahaman Instan",
         checklist: [
-          "Terapkan instruksi berpikir CoT pada prompt asisten Gems Anda.",
-          "Uji fungsionalitas pencarian web real-time yang terintegrasi pada Gems.",
-          "Susun ringkasan tren pasar secara otomatis menggunakan Gems yang memiliki akses web."
+          "Aktifkan Audio Overview di dalam koleksi referensi NotebookLM Anda.",
+          "Dengarkan argumen struktural dan perbandingan antar-jurnal.",
+          "Catat poin penting untuk disusun ke dalam draf usulan proposal atau outline buku."
         ]
       }
     ],
     2: [
       {
-        concept: "Rancang kolaborasi multi-persona di mana setiap asisten Gems memegang peran rigid yang kontras. Gems SEO fokus pada tren pencarian, Gems Writer menyusun draf konten, dan Gems Editor mengoreksi tata bahasa untuk hasil tulisan premium.",
-        architecture: "Persona Gems SEO ──> Persona Gems Writer ──> Persona Gems Editor ──> Output Selaras",
+        concept: "Google Opal memungkinkan peneliti membangun agen produktivitas multi-langkah tanpa coding. Rancang asisten khusus untuk analisis gap, penyusunan draf proposal, dan peninjauan akademis.",
+        architecture: "Desain Input Kustom ──> Alur Kerja Visual Opal ──> Agen Akademik Kustom ──> Draf Proposal",
         checklist: [
-          "Susun instruksi rigid untuk masing-masing persona asisten Gems.",
-          "Terapkan panduan format markdown agar hasil kerja Gems selalu rapi.",
-          "Pasang pembatasan panjang teks dan iterasi untuk mengontrol jalannya Gems."
+          "Bangun aplikasi mini kustom di kanvas visual Google Opal.",
+          "Petakan kolom input untuk fenomena penelitian dan variabel target.",
+          "Buat Research Idea Agent untuk menghasilkan judul dan rumusan gap otomatis."
         ]
       },
       {
-        concept: "Hubungkan asisten Gems untuk bekerja berurutan, di mana hasil kerja Gems pertama menjadi data masukan bagi Gems berikutnya. Tambahkan Gems Supervisor sebagai editor peninjau dan terapkan pos persetujuan manual manusia sebelum dipublikasikan.",
-        architecture: "Output Gems SEO ──> Draf Gems Writer ──> Audit Editor Gems ──> Pos Persetujuan Manusia (HITL)",
+        concept: "Terapkan agen peninjau akademis (Academic Reviewer Agent) untuk mengevaluasi draf proposal. Identifikasi kelemahan metodologi, klaim argumen, dan celah sitasi secara instan.",
+        architecture: "Draf Proposal ──> Academic Reviewer Agent ──> Pemeriksaan Logika Argumen ──> Rekomendasi Perbaikan",
         checklist: [
-          "Hubungkan alur kerja Gems secara berurutan untuk mengirim data draf tulisan.",
-          "Terapkan pedoman pemindahan konteks informasi agar detail dokumen tidak hilang.",
-          "Bangun pos persetujuan manual (Setujui / Tolak) sebelum eksekusi rilis publik."
+          "Konfigurasikan Academic Reviewer Agent di Google Opal.",
+          "Masukkan bagian draf latar belakang atau metodologi proposal Anda.",
+          "Analisis kelemahan argumen dan ikuti instruksi checklist perbaikan."
         ]
       }
     ],
     3: [
       {
-        concept: "Gunakan asisten cerdas Antigravity untuk mencari tren kata kunci Google, merayap kata kunci kompetitor teratas secara otonom, dan merakit draf artikel blog panjang yang teroptimasi SEO secara otomatis.",
-        architecture: "Riset Tren ──> Deteksi Kata Kunci Kompetitor ──> Analisis Outliner Antigravity ──> Draf Blog SEO",
+        concept: "Google Antigravity memungkinkan pembuatan skill akademik reusable berbasis SOP. Menggunakan dokumen SKILL.md, Anda dapat menetapkan aturan baku untuk penulisan artikel ilmiah dan ekstraksi gap riset.",
+        architecture: "Tulis Panduan SKILL.md ──> Tetapkan Batasan & Contoh ──> Skill Gap Creator Reusable",
         checklist: [
-          "Analisis kepadatan kata kunci kompetitor secara otomatis menggunakan asisten AI.",
-          "Rancang struktur artikel blog secara dinamis menggunakan outline buatan agen.",
-          "Otomatiskan penyusunan blog artikel teroptimasi SEO yang siap pakai."
+          "Buat folder skill terstruktur dengan pedoman file SKILL.md.",
+          "Tentukan batasan gaya bahasa akademik, format tabel, dan batasan panjang teks.",
+          "Uji coba Research Gap Creator Skill pada abstrak jurnal terbaru."
         ]
       },
       {
-        concept: "Instruksikan Antigravity untuk mengumpulkan data pesaing, menyusun kelebihan dan kelemahan mereka ke dalam matriks SWOT yang rapi, dan mengirimkan laporan briefing otomatis ke saluran Slack tim Anda secara instan.",
-        architecture: "Kumpulkan Data Pesaing ──> Kompilasi Tabel SWOT ──> Format Dokumen Laporan ──> Pengiriman Otomatis ke Slack",
+        concept: "Membangun skill literature matrix dan outline builder. Secara mandiri menganalisis referensi dan menuangkannya ke dalam tabel komparasi terstruktur yang siap disalin ke bab tinjauan pustaka.",
+        architecture: "Analisis Makalah Akademik ──> Literature Matrix Skill ──> Matriks Sintesis Tinjauan ──> Draf Bab 2",
         checklist: [
-          "Program asisten Antigravity untuk menyapu dan menganalisis situs produk pesaing.",
-          "Kustomisasi format tabel analisis SWOT dan template pelaporan.",
-          "Salurkan laporan analisis SWOT secara otomatis ke platform komunikasi Slack."
+          "Konfigurasikan Literature Matrix Creator Skill di Google Antigravity.",
+          "Input beberapa abstrak artikel untuk menyusun tabel perbandingan otonom.",
+          "Format hasil matriks riset agar sesuai dengan standar publikasi jurnal."
         ]
       }
     ],
     4: [
       {
-        concept: "Bangun aplikasi mini AI secara visual di kanvas Labs Google Opal. Desain kotak input, letakkan langkah pemrosesan AI Gemini secara drag-and-drop, dan atur visual output untuk merakit alat pembuat konten, perencana, atau kuesioner tanpa kode.",
-        architecture: "Kotak Input Pengguna ──> Langkah Pemrosesan AI ──> Hubungkan Logika Alur ──> Link Akses Aplikasi",
+        concept: "Orkestrasikan Sistem Operasi Penelitian Otonom (Research OS). Hubungkan referensi NotebookLM ke agen Opal dan skill Antigravity menjadi satu pipa kerja penulisan draf artikel ilmiah utuh.",
+        architecture: "NotebookLM Source Brain ──> Opal Proposal Agent ──> Antigravity Writing Skill ──> Draf Tinjauan Pustaka",
         checklist: [
-          "Desain elemen input dan output visual di kanvas drag-and-drop Google Opal.",
-          "Pasang langkah pemrosesan bertenaga AI Gemini untuk memproses data visual.",
-          "Hasilkan link akses aplikasi mini untuk membagikan tool buatan Anda ke rekan kerja."
+          "Hubungkan temuan analisis NotebookLM ke input alur kerja Opal.",
+          "Rancang alur data otomatis dari matriks literatur menuju outline builder.",
+          "Hasilkan draf bab tinjauan pustaka pertama (SLR) secara otonom."
         ]
       },
       {
-        concept: "Buat aplikasi mini di Google Opal untuk menguji dan memberi skor calon prospek penjualan secara otonom. Biarkan asisten AI mendraf email penawaran personal secara otomatis untuk menghemat waktu operasional UMKM.",
-        architecture: "Formulir Masuk ──> Langkah Penilai Prospek Opal ──> Langkah Pembuat Email ──> Draf Email Siap Kirim",
+        concept: "Terapkan validasi etis AI dan pos review Human-in-the-loop. Periksa fabrikasi kutipan, verifikasi keaslian sumber, dan selaraskan tulisan dengan kebijakan etika jurnal internasional (Elsevier, Nature, IEEE).",
+        architecture: "Draf AI Otonom ──> Cek Plagiarisme & Sitasi ──> Audit Kebijakan Jurnal ──> Persetujuan Akhir Manusia",
         checklist: [
-          "Bangun aplikasi kualifikasi prospek pada kanvas visual Google Opal.",
-          "Konfigurasikan asisten pembuat draf email penawaran personal otomatis.",
-          "Otomatiskan pengelolaan komunikasi email pelanggan secara visual tanpa coding."
+          "Sisipkan langkah fact-checking dan verifikasi sitasi manual dalam workflow.",
+          "Periksa halusinasi referensi atau ringkasan klaim yang tidak akurat.",
+          "Pastikan draf memenuhi standar etika kepengarangan sebelum disubmit ke penerbit."
         ]
       }
     ],
     5: [
       {
-        concept: "Sambungkan asisten Gems dan aplikasi visual Opal Anda ke pipa integrasi visual low-code. Otomatisasi alur kerja agar terpicu saat ada email baru masuk atau baris tabel diisi, serta pasang langkah retry visual jika jaringan lambat.",
-        architecture: "Email Masuk ──> Picu Otomatisasi Gems/Opal ──> Proses Informasi ──> Langkah Retry Ulang",
+        concept: "Selesaikan proyek Capstone sesuai jalur spesialisasi Anda: Track A (Research OS), Track B (Thesis OS), Track C (Book OS), atau Track D (Reviewer OS).",
+        architecture: "Pilih Spesialisasi Capstone ──> Rancang Integrasi Sistem ──> Deploy OS Akademik ──> Uji Coba",
         checklist: [
-          "Konfigurasikan pemicu otomatisasi visual dari platform eksternal seperti email.",
-          "Hubungkan alur data secara visual antar-aplikasi no-code Anda.",
-          "Rancang langkah penanganan error visual jika terdapat koneksi API terputus."
+          "Pilih satu jalur spesialisasi capstone dan rancang alur arsitekturnya.",
+          "Integrasikan source brain NotebookLM, Opal agents, and Antigravity skills.",
+          "Deploy dan uji performa sistem operasi akademik Anda dengan data referensi nyata."
         ]
       },
       {
-        concept: "Jalankan evaluasi pra-rilis. Pantau batas kueri harian dan token prompt untuk menghemat biaya operasional bulanan, lakukan uji coba bersama tim (UAT), dan terapkan checklist keamanan untuk melindungi kredensial akun.",
-        architecture: "Lacak Batas Kueri ──> Rapikan Instruksi Prompt ──> Uji Coba Tim (UAT) ──> Checklist Keamanan Akun",
+        concept: "Lakukan audit akhir sistem. Pantau batas kueri harian, amankan token API, lakukan pengujian UAT bersama rekan sejawat, dan raih sertifikat kompetensi Practitioner Anda.",
+        architecture: "Audit Token Kuota ──> Simulasi UAT Rekan Sejawat ──> Verifikasi Keamanan ──> Sertifikasi Kompetensi",
         checklist: [
-          "Audit konsumsi token prompt dan kuota kueri harian.",
-          "Lakukan uji coba simulasi draf buatan asisten bersama rekan kerja tim Anda.",
-          "Selesaikan 10 poin checklist peluncuran untuk memastikan keamanan akun."
+          "Analisis penggunaan token dan perkiraan biaya operasional kueri harian.",
+          "Lakukan simulasi pengujian akhir bersama pengguna uji dan perbaiki bug.",
+          "Tunjukkan hasil orkestrasi sistem untuk memperoleh sertifikat resmi Lensetek."
         ]
       }
     ]
@@ -1025,31 +1027,32 @@ const sessionExplanations = {
 };
 
 const skillsList = [
-  "Architectural thinking to translate complex business challenges into automated AI workflows",
-  "Advanced prompting & persona design for copywriters, market analysts, and compliance checks",
-  "Seamless tool integration: web search engines, knowledge bases, custom APIs, and live dashboards",
-  "Orchestration mastery to design, control, and sync collaboration among multiple specialized agents",
+  "Architectural thinking to translate complex research challenges into automated AI workflows",
+  "Advanced prompting & persona design for academic literature review, synthesis, and methodology checks",
+  "Seamless tool integration: source-grounded knowledge bases, research search engines, and document outline templates",
+  "Orchestration mastery to design, control, and sync collaboration among multiple specialized academic agents",
 ];
 
 const useCasesList = [
-  "Automated content marketing engines",
-  "Competitor tracking & auto SWOT reports",
-  "Smart customer support with human escalation",
-  "Lead qualification systems for sales teams",
-  "Autonomous CSV/Excel sales data analytics",
-  "Smart inventory & demand recommendations",
+  "Automated literature synthesis matrices",
+  "Research gap discovery & hypothesis formulation",
+  "Academic proposal background & methodology drafts",
+  "Syllabus-aligned book and chapter outline creators",
+  "Responsible AI-assisted manuscript editing and style validation",
+  "Self-reflective reviewer agents for article evaluation",
 ];
 
 const moduleQuestions = {
   EN: {
     1: [
       {
-        question: "What is the core difference between a standard Generative AI prompt and an Agentic AI system?",
+        question: "What is the primary advantage of using NotebookLM for academic research compared to a standard chatbot?",
         options: [
-          "Generative AI runs on local CPUs, while Agentic AI requires GPUs.",
-          "Generative AI is purely passive responding to inputs, while Agentic AI plans, chooses tools, and acts autonomously.",
-          "Generative AI only produces text, while Agentic AI only outputs executable code.",
-          "There is no difference; they are identical technologies."
+          "NotebookLM can automatically write an entire book without input.",
+          "NotebookLM grounds its answers exclusively on the references you upload to prevent hallucination.",
+          "NotebookLM connects directly to social media.",
+          "NotebookLM executes local SQL queries.",
+          "NotebookLM translates languages without internet access."
         ],
         answerIdx: 1
       },
@@ -1128,116 +1131,129 @@ const moduleQuestions = {
     ],
     3: [
       {
-        question: "How does an autonomous SWOT & Competitor tracking agent benefit a marketing campaign?",
+        question: "What is the primary component used to design a structured 'skill' in Google Antigravity?",
         options: [
-          "It automatically runs paid Facebook ads without a budget limit.",
-          "It continuously scans competitor websites, prices, and reviews to generate actionable market briefs.",
-          "It replaces the human copywriter entirely.",
-          "It speeds up the browser loading speed."
+          "Just using a regular chat input box.",
+          "A SKILL.md file containing instructions, constraints, and behavioral examples.",
+          "A Python-based backend script.",
+          "A local SQL database.",
+          "A visual drag-and-drop canvas."
         ],
         answerIdx: 1
       },
       {
-        question: "Which tool should a Content Marketing Agent use to gather current SEO search volumes?",
-        options: ["Static local text file", "SERP / Google Search API integration", "Direct chat memory", "CSS editor"],
-        answerIdx: 1
-      },
-      {
-        question: "What is a major SEO risk when utilizing raw unedited LLM copywriting at scale?",
+        question: "In academic writing, how does a Literature Matrix Creator skill help a researcher?",
         options: [
-          "Google completely bans all domains using any form of AI text.",
-          "Poor readability, repetitive phrasing, and lack of expert QA checks leading to lower quality scores.",
-          "Increased server storage consumption.",
-          "It causes the API endpoints to block the user."
+          "By automatically downloading paywalled papers without permission.",
+          "By systematically extracting and comparing research objectives, methodologies, and findings from uploaded documents.",
+          "By writing the entire thesis in one single step without review.",
+          "By hosting the database on a private server."
         ],
         answerIdx: 1
       },
       {
-        question: "In marketing automation, what is the role of an email newsletter dispatch agent?",
+        question: "What is the main risk of not defining negative constraints (guardrails) in an Academic Outline Creator skill?",
         options: [
-          "To write and send personalized content dynamically based on parsed trend logs.",
-          "To block spam emails.",
-          "To host the database on the client-side.",
-          "To test local server configurations."
+          "The skill might generate fabricated references or copy copyrighted text directly.",
+          "The CSS layout of the website will break.",
+          "The API key will be deleted automatically.",
+          "The server will shut down."
         ],
         answerIdx: 0
       },
       {
-        question: "How can multi-agent workflows improve brand voice consistency?",
+        question: "How can a researcher verify that a custom Antigravity skill conforms to writing guidelines?",
         options: [
-          "By using different LLM models for every sentence.",
-          "By employing a dedicated QA Editor agent to review and correct drafts against brand guidelines.",
-          "By banning all adjectives.",
-          "By writing only in uppercase."
+          "By checking the file size of the skill.",
+          "By running verification prompts in the sandbox and comparing outputs to a reference standard.",
+          "By converting the skill into a CSS stylesheet.",
+          "By changing the LLM temperature to 2.0."
         ],
         answerIdx: 1
+      },
+      {
+        question: "Why is separating 'Skills' from 'Agents' useful in agentic architectures?",
+        options: [
+          "It allows the same skill (e.g. outline creation) to be used by different agents (e.g. book agent, proposal agent).",
+          "It makes the database load faster.",
+          "It reduces the size of the React bundle.",
+          "It encrypts the client-side environment variables."
+        ],
+        answerIdx: 0
       }
     ],
     4: [
       {
-        question: "How can a Sales Qualification agent optimize lead conversion in SMBs?",
+        question: "Why is the 'Human-in-the-Loop Validation' stage critically important in an Autonomous Research System?",
         options: [
-          "By cold calling every lead on the phone directly.",
-          "By analyzing customer form inputs, matching budget criteria, and scheduling high-priority meetings autonomously.",
-          "By sending random discounts.",
-          "By blocking customer support tickets."
+          "To technically slow down AI processing time.",
+          "To manually perform reference verification, fact-checking, and quality assurance of the written output.",
+          "To translate visual prompts into binary code.",
+          "To bypass system firewall security.",
+          "To perform automated database backups."
         ],
         answerIdx: 1
       },
       {
-        question: "In customer support integration, what does a database lookup tool enable a chatbot to do?",
+        question: "In a Book Authoring System, what does a self-reflective 'Academic Reviewer Agent' do?",
         options: [
-          "To fetch and display live order statuses or shipping details directly to the user.",
-          "To download private client credit card numbers.",
-          "To delete customer account history.",
-          "To restart the local server."
+          "It automatically writes positive reviews on Google Books.",
+          "It evaluates drafts against academic standards, checking logical coherence, methodology weaknesses, and citation validity.",
+          "It handles invoice payments for publishers.",
+          "It restarts the web server."
         ],
-        answerIdx: 0
-      },
-      {
-        question: "What is an operational benefit of automated inventory intelligence?",
-        options: [
-          "It predicts stock levels and recommends reorder points based on historical sales trends.",
-          "It physically moves boxes in the warehouse.",
-          "It replaces the delivery truck drivers.",
-          "It encrypts stock numbers."
-        ],
-        answerIdx: 0
-      },
-      {
-        question: "Which API tool is best suited for an agent to check a package tracking status?",
-        options: ["A simple math calculator", "A shipping courier web API", "A direct conversation buffer", "A spreadsheet reader"],
         answerIdx: 1
       },
       {
-        question: "What is the danger of not implementing guardrails on operational business agents?",
+        question: "What is the benefit of a source-grounded workspace in an autonomous writing system?",
         options: [
-          "The computer screen might freeze.",
-          "The agent might execute incorrect refunds or send unauthorized emails due to hallucinated data.",
-          "The server will run out of hard drive space.",
-          "The database will automatically delete itself."
+          "It prevents the AI from generating claims or citations not present in the provided source documents.",
+          "It automatically increases the font size of the output PDF.",
+          "It makes the web application mobile responsive.",
+          "It deletes the database records."
+        ],
+        answerIdx: 0
+      },
+      {
+        question: "Which API integration is most critical for a Literature Search Agent to gather academic preprints?",
+        options: [
+          "An e-commerce payment gateway API.",
+          "An academic repository API like arXiv, Europe PMC, or Crossref.",
+          "A CSS UI styling toolkit.",
+          "A local file compressor."
+        ],
+        answerIdx: 1
+      },
+      {
+        question: "What is the danger of not implementing Human-in-the-Loop validation in an autonomous book writing pipeline?",
+        options: [
+          "The browser tab will close automatically.",
+          "The system might output plausible-sounding but inaccurate arguments or fabricated citations without human detection.",
+          "The server will run out of memory.",
+          "The user will lose their Google login session."
         ],
         answerIdx: 1
       }
     ],
     5: [
       {
-        question: "What is the primary advantage of deploying AI workflows on no-code platforms?",
+        question: "Which of the following is one of the Capstone Project track options in this course?",
         options: [
-          "It makes the agent run twice as fast.",
-          "It allows non-programmers to visually map, deploy, and monitor complex multi-agent systems easily.",
-          "It completely eliminates API token charges.",
-          "It makes the backend code completely secure from hackers."
+          "Building an e-commerce checkout feature.",
+          "Building an Academic Reviewer Operating System.",
+          "Designing a local network firewall system.",
+          "Creating an automated video editor.",
+          "Writing a calculator script using Python."
         ],
         answerIdx: 1
       },
       {
-        question: "What is a webhook tool used for in cloud-based marketing systems?",
+        question: "What is the role of webhooks in connecting academic platforms like NotebookLM or Google Opal?",
         options: [
-          "To display notifications in the browser console.",
-          "To send or receive instant real-time data payloads between different applications.",
-          "To clean up server memory cache.",
-          "To style CSS margins."
+          "To display pop-ups in the browser console.",
+          "To send real-time document updates or completed draft payloads between research workspaces and editors.",
+          "To clean up local browser cookies.",
+          "To style the PDF certificate layout."
         ],
         answerIdx: 1
       },
@@ -1252,12 +1268,12 @@ const moduleQuestions = {
         answerIdx: 0
       },
       {
-        question: "In a final showcase evaluation, what metric is most critical to prove business ROI?",
+        question: "In a Capstone Project evaluation, what metric is most critical to prove the success of an Academic OS?",
         options: [
-          "The total number of code files written.",
-          "The actual hours saved and task accuracy achieved by the automated workflow compared to manual labor.",
-          "The color theme of the web UI.",
-          "The server hard drive size."
+          "An keakuratan analisis jurnal, koherensi outline naskah, dan efisiensi waktu riset.",
+          "The accuracy of synthesized papers, coherence of outline generation, and time saved in literature reviews.",
+          "The UI background color selection.",
+          "The size of the local database."
         ],
         answerIdx: 1
       },
@@ -1276,12 +1292,13 @@ const moduleQuestions = {
   ID: {
     1: [
       {
-        question: "Apa perbedaan mendasar antara prompt AI Generatif standar dengan sistem Agentic AI?",
+        question: "Apakah keuntungan utama menggunakan NotebookLM untuk penelitian akademik dibandingkan dengan chatbot standar?",
         options: [
-          "AI Generatif berjalan di CPU lokal, sedangkan Agentic AI membutuhkan GPU.",
-          "AI Generatif bersifat pasif merespons input, sedangkan Agentic AI merencanakan, memilih alat, dan bertindak mandiri secara otonom.",
-          "AI Generatif hanya memproduksi teks, sedangkan Agentic AI hanya menghasilkan kode program.",
-          "Tidak ada perbedaan; keduanya adalah teknologi yang sama."
+          "NotebookLM dapat menulis buku secara otomatis tanpa input.",
+          "NotebookLM mendasarkan jawabannya secara eksklusif pada referensi yang Anda unggah untuk mencegah halusinasi.",
+          "NotebookLM terhubung langsung ke media sosial.",
+          "NotebookLM mengeksekusi kueri SQL lokal.",
+          "NotebookLM menerjemahkan bahasa tanpa akses internet."
         ],
         answerIdx: 1
       },
@@ -1313,14 +1330,15 @@ const moduleQuestions = {
     ],
     2: [
       {
-        question: "Apa peran utama dari agen 'Supervisor' atau 'Orchestrator' dalam arsitektur Multi-Agent?",
+        question: "Jenis agen Google Opal manakah yang paling tepat dibangun untuk mengevaluasi kelemahan dalam argumentasi dan metodologi penelitian Anda?",
         options: [
-          "Menyimpan password database dengan aman.",
-          "Mengevaluasi hasil kerja agen bawahan dan mengarahkan tugas ke langkah berikutnya secara cerdas.",
-          "Menerjemahkan kode program langsung menjadi biner.",
-          "Menghitung jumlah total kata yang ditulis."
+          "Research Idea Agent",
+          "Book Planning Agent",
+          "Academic Reviewer Agent",
+          "Audio Overview Agent",
+          "Translation Agent"
         ],
-        answerIdx: 1
+        answerIdx: 2
       },
       {
         question: "Apa yang dimaksud dengan 'system prompt' dalam rekayasa persona agen?",
@@ -1360,116 +1378,129 @@ const moduleQuestions = {
     ],
     3: [
       {
-        question: "Bagaimana agen riset SWOT & pelacak kompetitor otonom membantu kampanye pemasaran?",
+        question: "Apakah komponen utama yang digunakan untuk merancang 'skill' terstruktur di Google Antigravity?",
         options: [
-          "Menjalankan iklan Facebook berbayar tanpa batas anggaran secara otomatis.",
-          "Memindai situs web, harga, dan ulasan kompetitor secara berkala untuk menghasilkan laporan analisis pasar.",
-          "Menggantikan posisi copywriter manusia sepenuhnya.",
-          "Mempercepat kecepatan browser Anda."
+          "Hanya menggunakan kotak input chat biasa.",
+          "File SKILL.md yang berisi instruksi, batasan, dan contoh perilaku.",
+          "Skrip backend berbasis Python.",
+          "Database SQL lokal.",
+          "Kanvas visual drag-and-drop."
         ],
         answerIdx: 1
       },
       {
-        question: "Alat bantu apa yang harus digunakan agen riset tren untuk mengumpulkan data volume pencarian SEO terbaru?",
-        options: ["File teks lokal statis", "Integrasi SERP / Google Search API", "Memori obrolan langsung", "CSS editor"],
-        answerIdx: 1
-      },
-      {
-        question: "Apa risiko utama SEO jika kita menggunakan tulisan LLM mentah tanpa pengawasan dalam skala besar?",
+        question: "Dalam penulisan akademik, bagaimana skill 'Literature Matrix Creator' membantu peneliti?",
         options: [
-          "Google akan memblokir domain secara permanen.",
-          "Keterbacaan buruk, kalimat berulang, dan kurangnya QA yang menurunkan skor kualitas konten di mesin pencari.",
-          "Peningkatan konsumsi penyimpanan server.",
-          "Menyebabkan endpoint API memblokir pengguna."
+          "Mengunduh jurnal berbayar secara ilegal tanpa izin.",
+          "Mengekstrak dan membandingkan tujuan riset, metodologi, dan temuan dari dokumen referensi secara sistematis.",
+          "Menulis seluruh tesis dalam satu langkah cepat tanpa perlu revisi.",
+          "Menghosting database penelitian di server privat."
         ],
         answerIdx: 1
       },
       {
-        question: "Dalam otomatisasi pemasaran, apa peran agen pengirim buletin email?",
+        question: "Apa risiko utama jika kita tidak mendefinisikan batasan negatif (guardrails) pada skill 'Academic Outline Creator'?",
         options: [
-          "Menulis dan mengirimkan email pemasaran yang dipersonalisasi secara otomatis berdasarkan riset tren.",
-          "Memblokir email spam masuk.",
-          "Menghosting database di sisi browser client.",
-          "Menguji konfigurasi server lokal."
+          "Skill mungkin menghasilkan referensi fiktif (halusinasi) atau menyalin teks berhak cipta secara langsung.",
+          "Tata letak CSS di antarmuka web akan berantakan.",
+          "Kunci API OpenAI akan otomatis terhapus dari server.",
+          "Server backend akan mati secara tiba-tiba."
         ],
         answerIdx: 0
       },
       {
-        question: "Bagaimana alur kerja multi-agent menjaga konsistensi gaya bahasa brand (brand voice)?",
+        question: "Bagaimana cara peneliti memverifikasi bahwa skill kustom Antigravity telah mematuhi pedoman penulisan?",
         options: [
-          "Menggunakan model LLM yang berbeda untuk setiap kalimat.",
-          "Mempekerjakan agen Editor QA khusus untuk memeriksa draf terhadap panduan gaya brand.",
-          "Melarang penggunaan kata sifat.",
-          "Menulis hanya dengan huruf kapital."
+          "Memeriksa ukuran byte file penyimpanan skill.",
+          "Menjalankan perintah uji coba di sandbox simulator dan membandingkan outputnya dengan standar acuan.",
+          "Mengubah file konfigurasi skill menjadi kode CSS.",
+          "Mengubah suhu (temperature) LLM menjadi 2.0."
         ],
         answerIdx: 1
+      },
+      {
+        question: "Mengapa pemisahan antara 'Skill' dan 'Agent' sangat penting dalam arsitektur agentic?",
+        options: [
+          "Memungkinkan skill yang sama (misal: pembuat outline) dipakai ulang oleh berbagai agen (misal: agen buku, agen proposal).",
+          "Mempercepat waktu pemuatan database server.",
+          "Mengurangi ukuran bundle kompilasi aplikasi React.",
+          "Mengenkripsi variabel lingkungan di sisi client."
+        ],
+        answerIdx: 0
       }
     ],
     4: [
       {
-        question: "Bagaimana agen kualifikasi penjualan (Sales Qualification) membantu bisnis UMKM?",
+        question: "Mengapa tahap 'Validasi Human-in-the-Loop' sangat penting dalam Sistem Penelitian Otonom?",
         options: [
-          "Melakukan panggilan telepon langsung ke setiap prospek.",
-          "Menganalisis masukan formulir pelanggan, mencocokkan kriteria anggaran, dan menjadwalkan rapat penting secara mandiri.",
-          "Mengirimkan diskon acak ke pelanggan.",
-          "Memblokir tiket dukungan pelanggan."
+          "Untuk memperlambat waktu pemrosesan AI secara teknis.",
+          "Untuk melakukan verifikasi referensi, pemeriksaan fakta, dan jaminan kualitas output secara manual.",
+          "Untuk menerjemahkan prompt visual menjadi kode biner.",
+          "Untuk melewati keamanan firewall sistem.",
+          "Untuk melakukan pencadangan database otomatis."
         ],
         answerIdx: 1
       },
       {
-        question: "Dalam integrasi layanan pelanggan, apa fungsi alat pencarian database bagi chatbot?",
+        question: "Dalam sistem penulisan buku otomatis, apa tugas dari agen peninjau mandiri (Academic Reviewer Agent)?",
         options: [
-          "Mengambil dan menampilkan status pesanan atau detail pengiriman langsung ke pelanggan secara real-time.",
-          "Mengunduh nomor kartu kredit pelanggan secara ilegal.",
-          "Menghapus riwayat transaksi pelanggan.",
-          "Merestart server database lokal."
+          "Menulis ulasan bintang lima secara otomatis di Google Books.",
+          "Mengevaluasi draf terhadap standar akademik, memeriksa koherensi logika, kelemahan metodologi, dan validitas kutipan.",
+          "Mengelola transaksi pembayaran royalti dengan penerbit.",
+          "Melakukan restart pada server lokal."
         ],
-        answerIdx: 0
-      },
-      {
-        question: "Apa manfaat operasional dari otomatisasi kecerdasan inventaris (inventory intelligence)?",
-        options: [
-          "Memprediksi stok barang dan menyarankan waktu pemesanan ulang berdasarkan tren penjualan historis.",
-          "Memindahkan kotak barang secara fisik di gudang.",
-          "Menggantikan sopir truk pengiriman.",
-          "Mengenkripsi angka persediaan barang."
-        ],
-        answerIdx: 0
-      },
-      {
-        question: "Alat API mana yang paling cocok bagi agen untuk melacak status pengiriman paket?",
-        options: ["Kalkulator matematika sederhana", "API Web kurir pengiriman", "Buffer percakapan langsung", "Pembaca spreadsheet"],
         answerIdx: 1
       },
       {
-        question: "Apa bahayanya jika kita tidak memasang guardrails pada agen operasional bisnis?",
+        question: "Apa keuntungan dari workspace berbasis referensi sumber (source-grounded) dalam sistem penulisan otonom?",
         options: [
-          "Layar komputer Anda mungkin membeku.",
-          "Agen dapat memicu pengembalian dana salah atau mengirim email tidak sah akibat data halusinasi.",
-          "Ruang penyimpanan server akan cepat habis.",
-          "Database akan otomatis terhapus secara permanen."
+          "Mencegah AI menghasilkan klaim atau kutipan fiktif yang tidak ada dalam dokumen referensi yang diunggah.",
+          "Meningkatkan ukuran font teks PDF keluaran secara otomatis.",
+          "Membuat halaman web menjadi responsif di perangkat mobile.",
+          "Menghapus seluruh rekaman database progress belajar."
+        ],
+        answerIdx: 0
+      },
+      {
+        question: "Integrasi API manakah yang paling penting bagi Literature Search Agent untuk mengumpulkan draf publikasi akademik?",
+        options: [
+          "API gerbang pembayaran e-commerce.",
+          "API repositori akademik seperti arXiv, Europe PMC, atau Crossref.",
+          "Toolkit styling antarmuka CSS.",
+          "Aplikasi kompresi file lokal."
+        ],
+        answerIdx: 1
+      },
+      {
+        question: "Apa bahaya utama dari tidak menerapkan validasi Human-in-the-Loop dalam sistem penulisan buku otonom?",
+        options: [
+          "Tab browser pengguna akan menutup dengan sendirinya.",
+          "Sistem dapat mengeluarkan argumentasi yang terdengar meyakinkan namun tidak akurat atau kutipan fiktif tanpa terdeteksi.",
+          "Server akan kehabisan ruang memori RAM.",
+          "Pengguna akan kehilangan sesi login Google mereka."
         ],
         answerIdx: 1
       }
     ],
     5: [
       {
-        question: "Apa keuntungan utama menerapkan workflow AI di platform no-code?",
+        question: "Manakah di bawah ini yang merupakan salah satu pilihan jalur Proyek Capstone dalam kursus ini?",
         options: [
-          "Membuat agen berjalan dua kali lebih cepat.",
-          "Memungkinkan non-programmer memetakan, merilis, dan memantau sistem multi-agent secara visual dengan mudah.",
-          "Menghilangkan seluruh biaya token API sepenuhnya.",
-          "Membuat kode program terlindung penuh dari hacker."
+          "Membangun fitur checkout e-commerce.",
+          "Membangun Academic Reviewer Operating System.",
+          "Merancang sistem firewall jaringan lokal.",
+          "Membuat editor video otomatis.",
+          "Menulis skrip kalkulator menggunakan Python."
         ],
         answerIdx: 1
       },
       {
-        question: "Untuk apa alat webhook digunakan dalam sistem pemasaran berbasis cloud?",
+        question: "Apa peran webhook dalam menghubungkan platform akademik seperti NotebookLM atau Google Opal?",
         options: [
-          "Menampilkan notifikasi di konsol browser.",
-          "Mengirim atau menerima payload data instan secara real-time antar aplikasi yang berbeda.",
-          "Membersihkan cache memori server.",
-          "Mengatur margin CSS halaman."
+          "Menampilkan pop-up notifikasi pada konsol browser.",
+          "Mengirimkan pembaruan dokumen real-time atau draf naskah yang selesai dibuat antara workspace riset dan editor.",
+          "Membersihkan cache cookies browser lokal secara berkala.",
+          "Mengatur tata letak visual pencetakan sertifikat PDF."
         ],
         answerIdx: 1
       },
@@ -1484,12 +1515,12 @@ const moduleQuestions = {
         answerIdx: 0
       },
       {
-        question: "Dalam evaluasi akhir program, metrik apa yang paling penting untuk membuktikan ROI bisnis?",
+        question: "Dalam evaluasi proyek Capstone, metrik apa yang paling krusial untuk membuktikan kesuksesan Academic OS?",
         options: [
-          "Jumlah total baris kode program yang ditulis.",
-          "Waktu riil yang dihemat dan tingkat akurasi penyelesaian tugas otomatis dibandingkan pengerjaan manual.",
-          "Pilihan warna tema antarmuka web.",
-          "Ukuran hard drive server."
+          "Jumlah total file baru yang dibuat di dalam direktori proyek.",
+          "Keakuratan sintesis jurnal, koherensi outline naskah, dan efisiensi waktu dalam tinjauan pustaka.",
+          "Pemilihan skema warna latar belakang antarmuka pengguna.",
+          "Ukuran byte penyimpanan database lokal."
         ],
         answerIdx: 1
       },
@@ -1505,70 +1536,68 @@ const moduleQuestions = {
       }
     ]
   }
-};
-
-const getFallbackResponse = (prompt, moduleIdx, lang) => {
+};const getFallbackResponse = (prompt, moduleIdx, lang) => {
   const isId = lang === "ID";
   const p = prompt.toLowerCase();
   
   if (moduleIdx === 0) {
     if (p.includes("maksud") || p.includes("apa") || p.includes("jelas")) {
       return isId 
-        ? "Tentu! Di Modul 1 ini, maksud dari **Agentic AI** adalah teknologi kecerdasan buatan yang tidak hanya pasif menjawab pertanyaan (seperti ChatGPT biasa), melainkan bisa bertindak mandiri secara otonom untuk menyelesaikan tugas bisnis Anda. Prakteknya bisa menggunakan **Gemini Gems** untuk membuat asisten kustom sesuai kebutuhan peran bisnis Anda tanpa perlu mengerti bahasa pemrograman sama sekali."
-        : "Sure! In Module 1, **Agentic AI** refers to AI systems that don't just passively answer questions, but can actively plan, reason, and use tools (like web search) autonomously to achieve business goals. You can practice this easily by creating custom **Gemini Gems** for specific roles without writing any code.";
+        ? "Tentu! Di Modul 1 ini, maksud dari **Agentic AI** adalah teknologi kecerdasan buatan yang tidak hanya pasif menjawab pertanyaan (seperti ChatGPT biasa), melainkan bisa bertindak mandiri secara otonom untuk menyelesaikan tugas penelitian Anda. Prakteknya kita menggunakan **NotebookLM** untuk mengunggah berbagai sumber referensi akademik dan menganalisis polanya secara otonom tanpa perlu mengerti pemrograman sama sekali."
+        : "Sure! In Module 1, **Agentic AI** refers to AI systems that don't just passively answer questions, but can actively plan, reason, and use tools autonomously to achieve research goals. We will practice this by using **NotebookLM** to upload various academic sources and analyze patterns autonomously without coding.";
     }
     return isId
-      ? `Pertanyaan yang bagus sekali tentang Fondasi Agentic AI! Di sesi ini, kita belajar merancang prompt terstruktur (Chain-of-Thought) pada **Gemini Gems** agar asisten kustom Anda bisa melakukan riset pasar dan SEO secara otomatis. Anda tidak perlu coding, cukup jelaskan peran dan instruksi sistemnya dengan bahasa sehari-hari.`
-      : `That is a wonderful question about Agentic AI Foundations! In this session, we learn how to structure step-by-step thinking using **Gemini Gems** to search SEO trends. No coding required, just define your Gem's role and rules in plain language.`;
+      ? `Pertanyaan yang bagus sekali tentang Fondasi Agentic AI! Di sesi ini, kita belajar merancang basis pengetahuan terorganisasi pada **NotebookLM** agar kustom asisten Anda bisa memetakan dan menyintesis literatur secara otomatis. Anda tidak perlu coding, cukup unggah dokumen referensi Anda.`
+      : `That is a wonderful question about Agentic AI Foundations! In this session, we learn how to structure organized research workspaces using **NotebookLM** to synthesize journals and books. No coding required, just upload your reference sources.`;
   }
   
   if (moduleIdx === 1) {
     if (p.includes("maksud") || p.includes("apa") || p.includes("jelas")) {
       return isId
-        ? "Maksud dari **Kolaborasi Multi-Agent** adalah menghubungkan beberapa asisten Gems kustom Anda agar bisa bekerja sama dalam satu alur kerja terpadu (pipeline). Misalnya: Gems SEO meriset tren kata kunci -> hasilnya otomatis diteruskan ke Gems Copywriter untuk membuat iklan -> hasilnya dikoreksi oleh Gems Editor. Anda juga bisa menyisipkan pos persetujuan manusia sebelum draf dipublikasikan."
-        : "By **Multi-Agent Collaboration**, we mean connecting multiple specialized Gems to work together in a pipeline. For example, your SEO Gem gathers keywords, passes them to your Copywriter Gem for drafting, which is then audited by your Editor Gem. You can also insert manual approval checkposts for quality control.";
+        ? "Maksud dari **Google Opal** adalah platform no-code eksperimental di mana Anda bisa merancang agen asisten akademik Anda sendiri secara visual. Di modul 2 ini, kita menggunakannya untuk membuat prototype asisten ide riset, asisten draf proposal, dan asisten rencana buku tanpa menulis satu baris kode pun."
+        : "**Google Opal** is an experimental no-code platform where you can design custom academic assistants visually. In Module 2, we use it to build research idea helpers, proposal draft assistants, and book planning assistants without writing a single line of code.";
     }
     return isId
-      ? "Menarik sekali! Merancang kolaborasi tim asisten **Gemini Gems** sangat membantu mempercepat produksi konten pemasaran yang konsisten. Dengan membagi tugas ke beberapa asisten spesifik (SEO, Writer, Editor), hasil kerja asisten AI akan jauh lebih berkualitas dibanding chat sekali pakai."
-      : "Very interesting! Connecting specialized **Gemini Gems** in a pipeline dramatically scales consistent marketing content creation. By delegating tasks between Gems (SEO, Writer, Editor), the final output is much higher quality.";
+      ? "Menarik sekali! Merancang agen asisten akademik kustom di **Google Opal** sangat membantu mempercepat penulisan proposal dan outline buku. Dengan membagi peran spesifik (Ide Riset, Proposal, Reviewer), draf akademik yang dihasilkan akan jauh lebih komprehensif."
+      : "Very interesting! Designing custom academic agents in **Google Opal** helps accelerate proposal and book outline drafting. By delegating specific roles (Research Idea, Proposal, Reviewer), the resulting academic drafts are much more comprehensive.";
   }
   
   if (moduleIdx === 2) {
     if (p.includes("maksud") || p.includes("apa") || p.includes("jelas")) {
       return isId
-        ? "Di Modul 3 ini, otomatisasi pemasaran menggunakan asisten **Antigravity** dimaksudkan untuk membebaskan Anda dari tugas riset manual yang melelahkan. Antigravity akan bertindak secara mandiri mencari tren kata kunci terbaru di Google, merangkum strategi kompetitor menjadi tabel analisis SWOT, dan langsung merutekan draf laporannya ke saluran Slack atau email Anda."
-        : "In Module 3, marketing automation with **Antigravity** means freeing you from tedious manual research. Antigravity acts autonomously to scout search trends, summarize competitive features into a SWOT matrix, and route finished reports straight to your Slack channel.";
+        ? "Di Modul 3 ini, otomatisasi riset menggunakan skill **Antigravity** dimaksudkan untuk merancang kemampuan khusus berbasis Standar Operasional Prosedur (SOP) akademik. Antigravity akan bertindak secara mandiri menyusun literature matrix, merumuskan research gap, dan merancang kerangka penulisan buku sesuai pedoman yang Anda berikan."
+        : "In Module 3, research automation with **Antigravity** means designing reusable, SOP-based academic skills. Antigravity acts autonomously to construct literature matrices, formulate research gaps, and design book outlines according to your specific instructions.";
     }
     return isId
-      ? "Luar biasa! Otomatisasi pemasaran dengan asisten cerdas **Antigravity** mempermudah UMKM memantau pasar. Anda cukup menginstruksikan asisten untuk merangkum kelebihan kompetitor dan menulis draf konten SEO otomatis tanpa perlu menyalin teks manual."
-      : "Excellent! Marketing automation with the **Antigravity** assistant makes market tracking easy for SMBs. Just instruct the agent to analyze rival sites and draft SEO blogs otonomously.";
+      ? "Luar biasa! Otomatisasi riset dengan skill cerdas **Antigravity** mempermudah akademisi memetakan keterbatasan riset terdahulu. Anda cukup menulis pedoman instruksi (SKILL.md) dan biarkan asisten membuat matrik literatur secara otomatis."
+      : "Excellent! Research automation with the **Antigravity** skill engine makes mapping previous research gaps easy. Just define your instructions in a SKILL.md template and let the engine generate literature matrices autonomously.";
   }
   
   if (moduleIdx === 3) {
     if (p.includes("maksud") || p.includes("apa") || p.includes("jelas") || p.includes("opal")) {
       return isId
-        ? "Maksud dari **Google Opal** adalah platform no-code eksperimental dari **Google Labs** di mana Anda bisa merancang aplikasi mini AI sendiri secara visual menggunakan drag-and-drop. Di modul 4 ini, kita menggunakannya untuk membuat prototype aplikasi kualifikasi prospek penjualan dan otomatisasi email tindak lanjut tanpa perlu mengerti pemrograman database."
-        : "**Google Opal** is an experimental no-code platform from **Google Labs** where you can design custom AI mini-apps visually via drag-and-drop. In Module 4, we use it to build sales lead qualification tools and automated email outreach workflows without database programming.";
+        ? "Maksud dari **Sistem Riset Otonom & Publikasi Buku** adalah mengintegrasikan NotebookLM, Google Opal, dan Antigravity ke dalam satu alur kerja riset otonom terpadu (pipeline). Di modul 4 ini, kita menggunakannya untuk menghubungkan knowledge base, agen, dan skill dengan validasi kontrol kualitas dari Anda (Human-in-the-Loop)."
+        : "By **Autonomous Research & Book Publication Systems**, we mean integrating NotebookLM, Google Opal, and Antigravity into a cohesive, automated research pipeline. In Module 4, we connect knowledge, agents, and skills with your direct feedback (Human-in-the-Loop validation).";
     }
     return isId
-      ? "Pertanyaan menarik! Membuat prototype aplikasi mini di **Google Opal** sangat memudahkan operasional bisnis harian. Anda bisa memetakan formulir masuk, memasang langkah logika AI Gemini, dan menghasilkan email follow-up personal secara instan tanpa menulis satu baris kode pun."
-      : "Great question! Building visual mini-apps on **Google Opal** makes SMB ops incredibly efficient. You can map input forms, drag-and-drop Gemini AI steps, and compile instant personalized outreach links without code.";
+      ? "Pertanyaan menarik! Menghubungkan seluruh modul ke dalam satu sistem riset otonom akan mempercepat penyusunan Systematic Literature Review (SLR) dan draf naskah buku secara signifikan dengan tetap menjaga kontrol penuh pada verifikasi manusia."
+      : "Great question! Connecting all components into a single autonomous research system accelerates Systematic Literature Reviews (SLRs) and book drafting significantly, while maintaining full control via human verification.";
   }
   
   if (moduleIdx === 4) {
     if (p.includes("maksud") || p.includes("apa") || p.includes("jelas")) {
       return isId
-        ? "Maksud dari **Orkestrasi Low-Code & Launch** adalah tahap menghubungkan asisten Gems dan aplikasi visual Opal Anda ke pemicu otomatisasi harian (misalnya, jalan otomatis jika ada email baru atau baris tabel baru terisi). Serta bagaimana mengaudit kuota kueri harian agar biaya operasional tetap hemat dan aman."
-        : "**Low-code Orchestration & Launch** is the final step where you connect your custom Gems and visual Opal apps to automated daily triggers (like a new email or sheet row) and audit prompt costs to keep operations secure and cost-efficient.";
+        ? "Maksud dari **Final Capstone Project** adalah mempraktikkan seluruh ilmu yang diperoleh untuk membangun sistem operasi akademik kustom sesuai spesialisasi pilihan Anda: Research OS, Thesis OS, Book Authoring OS, atau Academic Reviewer OS."
+        : "**Final Capstone Project** is the practical phase where you apply all learned frameworks to build your own custom academic operating system: Research OS, Thesis OS, Book Authoring OS, or Academic Reviewer OS.";
     }
     return isId
-      ? "Langkah penting! Sebelum meluncurkan otomatisasi asisten AI ke operasional bisnis nyata, Anda harus memastikan kuota kueri harian terpantau dengan baik untuk menghindari biaya membengkak, serta melakukan simulasi uji coba bersama tim."
-      : "Crucial step! Prior to deploying AI automations to real business operations, you must manage daily query limits to control running token costs and run acceptance test runs with your team.";
+      ? "Langkah penting! Sebelum meluncurkan sistem operasi akademik Anda untuk kebutuhan riset nyata, Anda harus melakukan uji coba menyeluruh untuk memastikan kepatuhan etika penelitian dan keakuratan data sitasi."
+      : "Crucial step! Before launching your academic operating system for real research workflows, you must test it thoroughly to ensure research ethics compliance and citation accuracy.";
   }
   
   return isId
-    ? "Halo! Saya adalah AI-Mentor yang siap membantu Anda dalam kursus ini. Silakan tanyakan materi apa pun terkait Gemini Gems, Google Opal, atau otomatisasi Antigravity!"
-    : "Hello! I am your AI-Mentor, here to help you in this course. Please ask anything about Gemini Gems, Google Opal, or Antigravity automations!";
+    ? "Halo! Saya adalah AI-Mentor yang siap membantu Anda dalam kursus ini. Silakan tanyakan materi apa pun terkait NotebookLM, Google Opal, atau otomatisasi Antigravity!"
+    : "Hello! I am your AI-Mentor, here to help you in this course. Please ask anything about NotebookLM, Google Opal, or Antigravity automations!";
 };
 
 export default function LensetekAgenticAiLandingPage() {
@@ -1658,7 +1687,7 @@ export default function LensetekAgenticAiLandingPage() {
     const baseUrl = "https://www.linkedin.com/profile/add";
     const params = new URLSearchParams({
       startTask: "CERTIFICATION_NAME",
-      name: record.courseTitle || "Agentic AI for Marketing & Business",
+      name: record.courseTitle || "Agentic AI Mastery for Researchers & Authors",
       organizationName: record.institution || "Lensetek International, LLC",
       issueYear: issueYear.toString(),
       issueMonth: issueMonth.toString(),
@@ -1780,13 +1809,13 @@ export default function LensetekAgenticAiLandingPage() {
     const pageHeight = pdf.internal.pageSize.getHeight();
     const margin = 14;
     const contentWidth = pageWidth - margin * 2;
-    const modules = [
-      ["1", "Foundations of Agentic AI & Paradigm Shift", "3 Hours", "Understand core concepts of Agentic AI, agent architecture, memory, tools, and autonomous action.", "Completed"],
-      ["2", "Core Skills & Workflow Architecture", "4 Hours", "Master advanced prompt engineering, persona design, guardrails, and workflow orchestration.", "Completed"],
-      ["3", "Agentic AI for Marketing Automation", "5 Hours", "Build autonomous systems for content marketing, SEO research, competitor intelligence, and reporting.", "Completed"],
-      ["4", "Agentic AI for Business Operations & SMEs", "5 Hours", "Design agents for support, lead qualification, data analysis, and business operations automation.", "Completed"],
-      ["5", "No-Code Implementation & Final Evaluation", "3 Hours", "Deploy workflows using no-code platforms, evaluate performance, manage costs, and present a showcase.", "Completed"]
-    ];
+    const modules = t.EN.modulesList.map((m) => [
+      String(m.id),
+      m.title,
+      m.hours,
+      m.desc,
+      "Completed"
+    ]);
 
     pdf.setFillColor(255, 255, 255);
     pdf.rect(0, 0, pageWidth, pageHeight, "F");
@@ -1802,7 +1831,7 @@ export default function LensetekAgenticAiLandingPage() {
     drawPdfText(pdf, "Participant", margin + 14, 57, { size: 6.5, style: "bold", color: "#94A3B8" });
     drawPdfText(pdf, record.holderName, margin + 48, 57, { size: 9, style: "bold" });
     drawPdfText(pdf, "Course", margin + 14, 67, { size: 6.5, style: "bold", color: "#94A3B8" });
-    drawPdfText(pdf, "Agentic AI for Marketing & Business", margin + 48, 67, { size: 8, style: "bold" });
+    drawPdfText(pdf, "Agentic AI Mastery for Researchers & Authors", margin + 48, 67, { size: 8, style: "bold" });
     drawPdfText(pdf, "Duration", margin + 14, 77, { size: 6.5, style: "bold", color: "#94A3B8" });
     drawPdfText(pdf, "20 Hours", margin + 48, 77, { size: 8, style: "bold" });
 
@@ -1969,7 +1998,7 @@ export default function LensetekAgenticAiLandingPage() {
     cacheUserProgress(user.uid, progressPatch);
 
     try {
-      const docRef = doc(db, "progress", user.uid);
+      const docRef = doc(db, "academic_progress", user.uid);
       await setDoc(docRef, {
         ...progressPatch,
         userId: user.uid,
@@ -1998,7 +2027,7 @@ export default function LensetekAgenticAiLandingPage() {
     return {
       certificateNo,
       holderName,
-      courseTitle: "Agentic AI for Marketing & Business",
+      courseTitle: "Agentic AI Mastery for Researchers & Authors",
       institution: "Lensetek International, LLC",
       totalDuration: "20 Hours",
       modulesCount: 5,
@@ -2031,7 +2060,7 @@ export default function LensetekAgenticAiLandingPage() {
     };
 
     try {
-      await setDoc(doc(db, "certificates", publicRecord.certificateNo), {
+      await setDoc(doc(db, "academic_certificates", publicRecord.certificateNo), {
         ...publicRecord,
         lastUpdated: serverTimestamp()
       }, { merge: true });
@@ -2045,7 +2074,7 @@ export default function LensetekAgenticAiLandingPage() {
     if (!oldRecord?.certificateNo || !newRecord?.certificateNo || oldRecord.certificateNo === newRecord.certificateNo) return;
 
     try {
-      await setDoc(doc(db, "certificates", oldRecord.certificateNo), {
+      await setDoc(doc(db, "academic_certificates", oldRecord.certificateNo), {
         certificateNo: oldRecord.certificateNo,
         status: "reissued",
         reissuedTo: newRecord.certificateNo,
@@ -2143,7 +2172,7 @@ export default function LensetekAgenticAiLandingPage() {
         }
 
         try {
-          const docRef = doc(db, "progress", user.uid);
+          const docRef = doc(db, "academic_progress", user.uid);
           const docSnap = await getDoc(docRef);
           if (docSnap.exists()) {
             const data = docSnap.data();
@@ -2367,7 +2396,7 @@ export default function LensetekAgenticAiLandingPage() {
 
     try {
       const invitationCode = trimmedInput.toUpperCase();
-      const codeSnap = await getDoc(doc(db, "invitationCodes", invitationCode));
+      const codeSnap = await getDoc(doc(db, "academic_invitationCodes", invitationCode));
 
       if (!codeSnap.exists()) {
         setInviteError(currentT.inviteErrorInvalid);
@@ -2381,7 +2410,7 @@ export default function LensetekAgenticAiLandingPage() {
       };
 
       // Check limit securely in 'invitationUsages' collection by direct document read (prevents collection group permission errors)
-      const usageDocRef = doc(db, "invitationUsages", matched.code);
+      const usageDocRef = doc(db, "academic_invitationUsages", matched.code);
       const usageSnap = await getDoc(usageDocRef);
       let usagesList = [];
       if (usageSnap.exists()) {
@@ -2497,8 +2526,8 @@ export default function LensetekAgenticAiLandingPage() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              message: "Perform trend research and SWOT content brief for Agentic AI in Marketing.",
-              agentName: "Marketing Intelligence Agent"
+              message: "Extract key research gaps and draft a literature synthesis outline for Agentic AI in Academic Writing.",
+              agentName: "Academic Research Assistant"
             })
           });
           const data = await response.json();
@@ -2648,7 +2677,7 @@ export default function LensetekAgenticAiLandingPage() {
     const loadCertificateVerification = async () => {
       setVerificationLoading(true);
       try {
-        const verificationSnap = await getDoc(doc(db, "certificates", verificationCertificateNo));
+        const verificationSnap = await getDoc(doc(db, "academic_certificates", verificationCertificateNo));
         setVerificationRecord(verificationSnap.exists() ? verificationSnap.data() : null);
       } catch (error) {
         console.error("Certificate Verification Loading Error:", error);
@@ -2733,17 +2762,20 @@ export default function LensetekAgenticAiLandingPage() {
               <div className="rounded-2xl border border-slate-200 p-5">
                 <h2 className="text-sm font-extrabold text-slate-900">Transcript</h2>
                 <div className="mt-4 divide-y divide-slate-100">
-                  {(verificationRecord.transcript || []).map((item) => (
-                    <div key={item.moduleId} className="flex items-center justify-between gap-4 py-3 text-left">
-                      <div>
-                        <p className="text-sm font-bold text-slate-800">{item.title}</p>
-                        <p className="text-xs text-slate-500">{item.hours}</p>
+                  {(verificationRecord.transcript || []).map((item) => {
+                    const enModule = t.EN.modulesList.find(m => m.id === item.moduleId) || item;
+                    return (
+                      <div key={item.moduleId} className="flex items-center justify-between gap-4 py-3 text-left">
+                        <div>
+                          <p className="text-sm font-bold text-slate-800">{enModule.title}</p>
+                          <p className="text-xs text-slate-500">{enModule.hours}</p>
+                        </div>
+                        <span className="rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wide text-emerald-700">
+                          {item.status === "Selesai" || item.status === "Completed" ? "Completed" : "Pending"}
+                        </span>
                       </div>
-                      <span className="rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wide text-emerald-700">
-                        {item.status}
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -2891,7 +2923,7 @@ export default function LensetekAgenticAiLandingPage() {
                     >
                       <option value="Mahasiswa / Pelajar">{lang === "EN" ? "Student" : "Mahasiswa / Pelajar"}</option>
                       <option value="Wirausaha / Business Owner">{lang === "EN" ? "Entrepreneur" : "Wirausaha / Business Owner"}</option>
-                      <option value="Marketing Specialist">{lang === "EN" ? "Marketing" : "Marketing Specialist"}</option>
+                      <option value="Researcher / Author">{lang === "EN" ? "Researcher / Author" : "Peneliti / Penulis"}</option>
                       <option value="Karyawan Swasta">{lang === "EN" ? "Private Employee" : "Karyawan Swasta"}</option>
                       <option value="Guru / Dosen">{lang === "EN" ? "Teacher / Lecturer" : "Guru / Dosen"}</option>
                       <option value="Lainnya">{lang === "EN" ? "Other" : "Lainnya"}</option>
@@ -3492,148 +3524,147 @@ export default function LensetekAgenticAiLandingPage() {
 
               {/* TAB CONTENT: INTERACTIVE LAB */}
               {classroomTab === "lab" && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-800 font-['Plus_Jakarta_Sans']">
-                        {currentT.modulesList[activeModuleIdx].id === 1 ? (
-                          <span>💬 {currentT.practicalLabTitle}</span>
-                        ) : (
-                          <span>💬 {currentT.practicalLabTitle}: {currentT.modulesList[activeModuleIdx].title}</span>
-                        )}
-                      </h3>
-                    </div>
-                    <span className={`text-[10px] font-extrabold px-3 py-1.5 rounded-full border uppercase tracking-wider shrink-0 text-center ${
-                      chatCount >= 10 
-                        ? 'bg-rose-50 border-rose-200 text-rose-600' 
-                        : 'bg-cyan-50 border-cyan-200 text-cyan-600'
-                    }`}>
-                      ⚡ {lang === "EN" ? "Today's Queries" : "Kueri Hari Ini"}: {chatCount} / 10
-                    </span>
+                <motion.div 
+                  initial={{ opacity: 0, y: 15 }} 
+                  animate={{ opacity: 1, y: 0 }} 
+                  transition={{ duration: 0.4 }}
+                  className="space-y-6"
+                >
+                  <div className="border-b border-slate-100 pb-4">
+                    <h3 className="text-xl font-bold text-slate-800 font-['Plus_Jakarta_Sans'] flex items-center gap-2">
+                      <span>💬</span>
+                      <span>{lang === "EN" ? "AI-Mentor Workspace" : "Ruang Kerja AI-Mentor"}</span>
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-1">
+                      {lang === "EN" 
+                        ? `Specialized workspace companion for Module 0${currentT.modulesList[activeModuleIdx].id}`
+                        : `Pendamping ruang kerja khusus untuk Modul 0${currentT.modulesList[activeModuleIdx].id}`}
+                    </p>
                   </div>
 
-                  {/* AI-Mentor Chat */}
-                  <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-                    <div className="flex flex-col gap-3 border-b border-slate-100 bg-slate-50 px-4 py-3 md:flex-row md:items-center md:justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-100 text-cyan-700">
-                          <Bot className="h-4 w-4" />
+                  <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-md transition-all duration-300 hover:shadow-lg">
+                    {/* Background Glow */}
+                    <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-cyan-100/40 blur-3xl" />
+                    <div className="absolute -left-12 -bottom-12 h-48 w-48 rounded-full bg-emerald-100/30 blur-3xl" />
+
+                    <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                      {/* Left: Branding Icon */}
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-emerald-500 text-white shadow-md shadow-cyan-100">
+                        <Bot className="h-9 w-9" />
+                      </div>
+
+                      {/* Right: Content details */}
+                      <div className="flex-1 space-y-2">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700">
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                          </span>
+                          Custom GPT Integration
                         </span>
-                        <div>
-                          <p className="text-xs font-extrabold uppercase tracking-wide text-slate-800">AI-Mentor</p>
-                          <p className="text-[11px] text-slate-500">{currentT.modulesList[activeModuleIdx].title}</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-2">
-                        <button onClick={handleSummarizeLab} disabled={!getAgentLogText(labLogs)} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[11px] font-bold text-slate-700 hover:bg-slate-100 disabled:opacity-50">
-                          <ListChecks className="h-3.5 w-3.5" />
-                          {lang === "EN" ? "Summarize" : "Ringkas"}
-                        </button>
-                        <button onClick={handleGenerateMindmap} disabled={!getAgentLogText(labLogs)} className="inline-flex items-center gap-2 rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-2 text-[11px] font-bold text-cyan-700 hover:bg-cyan-100 disabled:opacity-50">
-                          <Network className="h-3.5 w-3.5" />
-                          Mindmap
-                        </button>
+                        <h4 className="text-lg md:text-xl font-bold text-slate-900 font-['Plus_Jakarta_Sans']">
+                          {currentT.modulesList[activeModuleIdx].title}
+                        </h4>
+                        <p className="text-xs md:text-sm text-slate-650 leading-relaxed max-w-2xl">
+                          {lang === "EN"
+                            ? "This sandbox lab operates through our specialized Custom GPT, trained specifically as an Agentic AI Writing Mentor. Access custom instructions, templates, and interact directly with the AI-Mentor to complete your module assignments."
+                            : "Laboratorium simulasi ini beroperasi menggunakan Kustom GPT khusus yang dilatih secara spesifik sebagai Mentor Penulisan AI Agentic. Dapatkan instruksi kustom, panduan template, dan berinteraksilah langsung dengan AI-Mentor untuk menyelesaikan tugas modul Anda."}
+                        </p>
                       </div>
                     </div>
-                    <div className="h-72 overflow-y-auto bg-white p-4 space-y-4 scrollbar-thin">
-                      <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-500">
-                        {lang === "EN"
-                          ? `Connected to ${currentT.modulesList[activeModuleIdx].title} AI-Mentor. Ready.`
-                          : `Terhubung ke AI-Mentor ${currentT.modulesList[activeModuleIdx].title}. Siap.`}
-                      </div>
-                    
-                    {labLogs.map((log, idx) => (
-                      <div key={idx} className={`rounded-2xl px-4 py-3 shadow-sm ${
-                        getLogType(log) === "user" ? 'ml-auto max-w-[85%] bg-cyan-600 text-white' : getLogType(log) === "agent" ? 'max-w-[92%] border border-slate-200 bg-slate-50' : 'border border-slate-200 bg-white text-slate-500'
-                      }`}>
-                        {getLogType(log) === "agent" ? (
-                          <MarkdownMessage content={stripLogPrefix(log)} />
+
+                    {/* Capabilities list */}
+                    <div className="mt-8 border-t border-slate-100 pt-6">
+                      <h5 className="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-cyan-500" />
+                        {lang === "EN" ? "What you can do with this AI-Mentor:" : "Yang dapat Anda lakukan dengan AI-Mentor ini:"}
+                      </h5>
+                      
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {(currentT.modulesList[activeModuleIdx].id === 1 ? (
+                          lang === "EN" ? [
+                            "Synthesize academic literature and spot research gaps",
+                            "Ask questions about NotebookLM workspace configuration",
+                            "Draft structured summaries from uploaded PDF reference materials"
+                          ] : [
+                            "Sintesis literatur akademik dan temukan celah penelitian (research gap)",
+                            "Konsultasikan konfigurasi workspace NotebookLM Anda",
+                            "Buat draf ringkasan terstruktur dari referensi PDF yang diunggah"
+                          ]
+                        ) : currentT.modulesList[activeModuleIdx].id === 2 ? (
+                          lang === "EN" ? [
+                            "Get guidance on designing Google Opal agents",
+                            "Refine proposal draft workflows and outline structures",
+                            "Validate research ideas and methodologies"
+                          ] : [
+                            "Dapatkan panduan merancang agen Google Opal",
+                            "Sempurnakan alur kerja proposal dan kerangka outline",
+                            "Evaluasi ide penelitian dan metodologi"
+                          ]
+                        ) : currentT.modulesList[activeModuleIdx].id === 3 ? (
+                          lang === "EN" ? [
+                            "Draft structured SKILL.md templates for Google Antigravity",
+                            "Review custom research gap and literature matrix skills",
+                            "Test skill execution parameters and behavior constraints"
+                          ] : [
+                            "Rancang template SKILL.md terstruktur untuk Google Antigravity",
+                            "Tinjau kemampuan (skill) analisis gap riset dan matriks literatur",
+                            "Uji parameter eksekusi dan batasan perilaku skill"
+                          ]
+                        ) : currentT.modulesList[activeModuleIdx].id === 4 ? (
+                          lang === "EN" ? [
+                            "Orchestrate multi-agent systems and publishing workflows",
+                            "Validate systematic literature reviews with human-in-the-loop steps",
+                            "Address reference hallucinations and check AI ethics compliance"
+                          ] : [
+                            "Orkestrasikan sistem multi-agen dan alur kerja publikasi",
+                            "Validasi tinjauan literatur sistematis dengan kontrol human-in-the-loop",
+                            "Atasi halusinasi referensi dan periksa kepatuhan etika AI"
+                          ]
                         ) : (
-                          <span>{stripLogPrefix(log)}</span>
-                        )}
+                          lang === "EN" ? [
+                            "Structure your Capstone project architecture",
+                            "Choose and refine your specialization track",
+                            "Verify your final system against real-world research requirements"
+                          ] : [
+                            "Susun arsitektur proyek Capstone Anda",
+                            "Pilih dan matangkan jalur spesialisasi proyek akhir Anda",
+                            "Verifikasi sistem akhir Anda terhadap standar kebutuhan riset riil"
+                          ]
+                        )).map((capability, idx) => (
+                          <div key={idx} className="flex gap-2.5 items-start text-xs text-slate-650 bg-slate-50 border border-slate-100 rounded-xl p-3 hover:bg-slate-100/70 transition-all duration-200">
+                            <span className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-cyan-600 text-[10px] font-bold">
+                              ✓
+                            </span>
+                            <span>{capability}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                    
-                    {labLoading && (
-                      <div className="rounded-xl border border-cyan-200 bg-cyan-50 px-4 py-3 text-xs font-semibold text-cyan-700 animate-pulse">{lang === "EN" ? "AI-Mentor is processing..." : "AI-Mentor sedang memproses..."}</div>
-                    )}
-                  </div>
-                  </div>
-
-                  {(labSummary || labMindmap) && (
-                    <div className="space-y-4">
-                      {labSummary && (
-                        <div className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
-                          <div className="mb-3 flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-emerald-700">
-                            <ListChecks className="h-4 w-4" />
-                            {lang === "EN" ? "Conversation Summary" : "Ringkasan Percakapan"}
-                          </div>
-                          <MarkdownMessage content={labSummary} />
-                        </div>
-                      )}
-
-                      {labMindmap && (
-                        <div className="w-full rounded-2xl border border-cyan-200 bg-sky-50/70 p-4">
-                          <div className="mb-4 flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-cyan-700">
-                            <Network className="h-4 w-4" />
-                            {lang === "EN" ? "Generated Mindmap" : "Mindmap Hasil Generate"}
-                          </div>
-                          <div className="grid w-full gap-4 md:grid-cols-[160px_1fr] md:items-center">
-                            <div className="flex min-h-24 w-full items-center justify-center rounded-2xl border-2 border-cyan-300 bg-white px-4 py-3 text-center text-xs font-extrabold text-cyan-800 shadow-sm">
-                              {labMindmap.root}
-                            </div>
-                            <div className="grid gap-3">
-                              {labMindmap.branches.map((branch) => (
-                                <div key={branch.id} className="grid gap-2 md:grid-cols-[32px_1fr] md:items-center">
-                                  <div className="hidden h-px bg-cyan-300 md:block" />
-                                  <div className="min-w-0 rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
-                                    <p className="text-xs font-extrabold text-slate-800">{branch.title}</p>
-                                    {branch.details.length > 0 && (
-                                      <div className="mt-2 flex flex-wrap gap-2">
-                                        {branch.details.map((detail, detailIdx) => (
-                                          <span key={detailIdx} className="max-w-full rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[10px] font-semibold text-slate-600">
-                                            {detail}
-                                          </span>
-                                        ))}
-                                      </div>
-                                    )}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      )}
                     </div>
-                  )}
 
-                  {/* Terminal Prompt input */}
-                  <div className="flex gap-2">
-                    <input 
-                      type="text"
-                      value={labPrompt}
-                      onChange={(e) => setLabPrompt(e.target.value)}
-                      onKeyDown={(e) => { if (e.key === 'Enter') handleLabExecute(currentT.modulesList[activeModuleIdx].title); }}
-                      placeholder={lang === "EN" ? "Type a question or task here..." : "Ketik pertanyaan Anda di sini..."}
-                      disabled={labLoading}
-                      className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-                    />
-                    <button 
-                      onClick={() => handleLabExecute(currentT.modulesList[activeModuleIdx].title)}
-                      disabled={labLoading || !labPrompt.trim()}
-                      className="rounded-xl bg-cyan-500 px-5 text-white flex items-center justify-center hover:bg-cyan-600 transition-all cursor-pointer disabled:opacity-50 shrink-0"
-                    >
-                      <Send className="h-4 w-4" />
-                    </button>
-                    <a 
-                      href="https://chatgpt.com/g/g-6a1d5f5c450881919e9bbee90b26818b-agentic-ai-for-marketing-and-business-mini-course" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-xl bg-[#10A37F] px-4 text-white flex items-center justify-center hover:bg-[#0E906F] transition-all cursor-pointer shrink-0"
-                      title="AI-Mentor ChatGPT"
-                    >
-                      <ChatGPTIcon className="h-5 w-5" />
-                    </a>
+                    {/* Launch CTA */}
+                    <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                      <div className="text-left">
+                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wide">
+                          Host Provider
+                        </p>
+                        <p className="text-xs font-semibold text-slate-700 flex items-center gap-1.5 mt-0.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#10A37F]" />
+                          OpenAI ChatGPT Custom GPTs
+                        </p>
+                      </div>
+
+                      <a
+                        href="https://chatgpt.com/g/g-6a225046beb4819181fc3f1a5d925f9a-ai-mentor-agentic-ai-for-writings-by-lensetek"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-2xl bg-[#10A37F] hover:bg-[#0e8f6f] px-6 py-3.5 text-xs font-bold text-white shadow-md shadow-[#10A37F]/10 hover:shadow-lg hover:shadow-[#10A37F]/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+                      >
+                        <ChatGPTIcon className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+                        <span>{lang === "EN" ? "Launch AI-Mentor in ChatGPT" : "Buka AI-Mentor di ChatGPT"}</span>
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </a>
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -3842,7 +3873,7 @@ export default function LensetekAgenticAiLandingPage() {
                                   <Award className="h-3.5 w-3.5 text-cyan-600" /> Course
                                 </div>
                                 <div className="text-slate-400">:</div>
-                                <div className="font-extrabold text-slate-800 leading-none">Agentic AI for Marketing & Business</div>
+                                <div className="font-extrabold text-slate-800 leading-none">Agentic AI Mastery for Researchers & Authors</div>
 
                                 <div className="flex items-center gap-2 text-slate-400 font-extrabold uppercase tracking-wider text-[10px]">
                                   <Clock className="h-3.5 w-3.5 text-cyan-600" /> Total Duration
@@ -3900,37 +3931,37 @@ export default function LensetekAgenticAiLandingPage() {
                                 {[
                                   {
                                     no: 1,
-                                    title: "Foundations of Agentic AI & Paradigm Shift",
-                                    duration: "3 Hours",
-                                    description: "Understand core concepts of Agentic AI, agent architecture, memory, tools, and how agents think and act autonomously.",
+                                    title: "AI Research Brain with NotebookLM",
+                                    duration: "4 Hours",
+                                    description: "Build an organized research knowledge base and leverage AI to rapidly comprehend academic sources.",
                                     performance: "Completed"
                                   },
                                   {
                                     no: 2,
-                                    title: "Core Skills & Workflow Architecture",
+                                    title: "Building Academic Productivity Agents with Google Opal",
                                     duration: "4 Hours",
-                                    description: "Master advanced prompt engineering, persona design, guardrails, and multi-agent workflow orchestration.",
+                                    description: "Build no-code AI agents to automate research and academic writing activities.",
                                     performance: "Completed"
                                   },
                                   {
                                     no: 3,
-                                    title: "Agentic AI for Marketing Automation",
-                                    duration: "5 Hours",
-                                    description: "Build autonomous systems for content marketing, SEO research, competitor intelligence, and automated reporting.",
+                                    title: "Building Research & Writing Skills with Google Antigravity",
+                                    duration: "4 Hours",
+                                    description: "Develop professional SOP-based skills that can be reused across various AI agents.",
                                     performance: "Completed"
                                   },
                                   {
                                     no: 4,
-                                    title: "Agentic AI for Business Operations & SMEs",
-                                    duration: "5 Hours",
-                                    description: "Design agents for customer support, lead qualification, data analysis, and business operations automation.",
+                                    title: "Autonomous Research & Book Publication Systems",
+                                    duration: "4 Hours",
+                                    description: "Integrate NotebookLM, Google Opal, and Antigravity into a cohesive research and writing system.",
                                     performance: "Completed"
                                   },
                                   {
                                     no: 5,
-                                    title: "No-Code Implementation & Final Evaluation",
-                                    duration: "3 Hours",
-                                    description: "Deploy workflows using no-code platforms, evaluate performance, manage costs, and present final showcase.",
+                                    title: "Final Capstone Project",
+                                    duration: "4 Hours",
+                                    description: "Apply your knowledge by building a specialized academic operating system.",
                                     performance: "Completed"
                                   }
                                 ].map((m) => (
@@ -4106,13 +4137,11 @@ export default function LensetekAgenticAiLandingPage() {
 
                 <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black tracking-tight leading-[1.08] text-[#091A36] font-['Plus_Jakarta_Sans']">
                   Agentic AI <br />
-                  <span className="text-[#091A36]">{lang === "EN" ? "for Marketing & Business" : "for Marketing & Business"}</span>
+                  <span className="text-[#091A36]">{currentT.heroTitleHighlight}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-650 leading-relaxed max-w-2xl font-medium">
-                  {lang === "EN"
-                    ? "Build autonomous AI agents working directly for you. Automate marketing operations, competitor SWOT engines, customer support workflows, and day-to-day operations in a much smarter, automated style."
-                    : "Bangun Agen AI Otonom yang bekerja untuk Anda. Otomatisasi pemasaran, analisis kompetitor, layanan pelanggan, dan operasional bisnis dengan cara yang lebih cerdas."}
+                  {currentT.heroDescription}
                 </p>
 
                 {/* Lower info capsule row */}
@@ -4156,7 +4185,7 @@ export default function LensetekAgenticAiLandingPage() {
               >
                 {/* Generated Background Image */}
                 <img 
-                  src="/hero_woman_working.png" 
+                  src="/hero_academic.png" 
                   alt="Professional Working" 
                   className="absolute inset-0 h-full w-full object-cover opacity-90 transition-all hover:scale-105 duration-[4000ms]" 
                 />
@@ -4169,28 +4198,28 @@ export default function LensetekAgenticAiLandingPage() {
                   <div className="bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl p-2.5 shadow-sm flex items-center gap-3 transform -translate-x-2">
                     <span className="h-6 w-6 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-xs shrink-0">🔍</span>
                     <div>
-                      <p className="font-extrabold text-[10px] text-[#091A36] leading-none">{lang === "EN" ? "Trend Research & SEO" : "Riset Tren & SEO"}</p>
+                      <p className="font-extrabold text-[10px] text-[#091A36] leading-none">{lang === "EN" ? "Literature Search Engine" : "Mesin Pencari Literatur"}</p>
                       <p className="text-[8px] text-slate-500 mt-0.5">{lang === "EN" ? "Agent 1 active" : "Agen 1 berjalan"}</p>
                     </div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl p-2.5 shadow-sm flex items-center gap-3 transform translate-x-1">
                     <span className="h-6 w-6 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs shrink-0">📝</span>
                     <div>
-                      <p className="font-extrabold text-[10px] text-[#091A36] leading-none">{lang === "EN" ? "Content Writer" : "Penulis Konten"}</p>
+                      <p className="font-extrabold text-[10px] text-[#091A36] leading-none">{lang === "EN" ? "Research Gap Discovery" : "Identifikasi Gap Riset"}</p>
                       <p className="text-[8px] text-slate-500 mt-0.5">{lang === "EN" ? "Agent 2 active" : "Agen 2 berjalan"}</p>
                     </div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl p-2.5 shadow-sm flex items-center gap-3 transform -translate-x-1">
                     <span className="h-6 w-6 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs shrink-0">⚙️</span>
                     <div>
-                      <p className="font-extrabold text-[10px] text-[#091A36] leading-none">{lang === "EN" ? "Editor & QA Check" : "Editor & QA"}</p>
+                      <p className="font-extrabold text-[10px] text-[#091A36] leading-none">{lang === "EN" ? "Thesis Auto-Drafter" : "Penyusun Draf Tesis"}</p>
                       <p className="text-[8px] text-slate-500 mt-0.5">{lang === "EN" ? "Agent 3 active" : "Agen 3 berjalan"}</p>
                     </div>
                   </div>
                   <div className="bg-[#091A36] text-white border border-[#12284C] rounded-xl p-2.5 shadow-sm flex items-center gap-3 transform translate-x-2">
                     <span className="h-6 w-6 rounded-lg bg-white/20 text-white flex items-center justify-center text-xs shrink-0">📊</span>
                     <div>
-                      <p className="font-extrabold text-[10px] leading-none">{lang === "EN" ? "Insight Report" : "Laporan & Insight"}</p>
+                      <p className="font-extrabold text-[10px] leading-none">{lang === "EN" ? "Academic Reviewer" : "Reviewer Akademis"}</p>
                       <p className="text-[8px] text-slate-300 mt-0.5">{lang === "EN" ? "Finished successfully" : "Selesai!"}</p>
                     </div>
                   </div>
@@ -4208,117 +4237,40 @@ export default function LensetekAgenticAiLandingPage() {
               </h2>
               <p className="mt-4 text-sm text-slate-500 max-w-2xl mx-auto font-medium">
                 {lang === "EN" 
-                  ? "Designed step-by-step for absolute beginners to business professionals. No coding required." 
-                  : "Dirancang secara bertahap untuk pemula hingga profesional bisnis. Tidak membutuhkan latar belakang coding."}
+                  ? "Designed step-by-step for absolute beginners to academic professionals. No coding required." 
+                  : "Dirancang secara bertahap untuk pemula hingga dosen, akademisi, dan peneliti. Tidak membutuhkan latar belakang coding."}
               </p>
 
               <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-6">
-                
-                {/* Module 1 */}
-                <div className="bg-[#FCFAF7] border border-slate-100 hover:border-slate-200 rounded-3xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="h-12 w-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg font-bold shadow-inner">
-                    💡
-                  </div>
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-600 mt-5">
-                    {lang === "EN" ? "MODULE 1" : "MODUL 1"}
-                  </span>
-                  <h3 className="text-sm font-black text-[#091A36] mt-2 font-['Plus_Jakarta_Sans'] leading-snug min-h-[44px]">
-                    {lang === "EN" ? "Foundations of Agentic AI & Paradigm Shift" : "Fondasi Agentic AI & Pergeseran Paradigma"}
-                  </h3>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-500 mt-3">
-                    ⏱️ 3 {lang === "EN" ? "Hours" : "Jam"}
-                  </span>
-                  <p className="text-xs text-slate-500 mt-4 leading-relaxed font-medium">
-                    {lang === "EN"
-                      ? "Understand core concepts of Agentic AI, agent architecture, memory, tools, and how agents think."
-                      : "Memahami konsep dasar Agentic AI, arsitektur agen, memori, tools, serta cara agen berpikir dan bertindak otonom."}
-                  </p>
-                </div>
-
-                {/* Module 2 */}
-                <div className="bg-[#FCFAF7] border border-slate-100 hover:border-slate-200 rounded-3xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="h-12 w-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-lg font-bold shadow-inner">
-                    🕸️
-                  </div>
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 mt-5">
-                    {lang === "EN" ? "MODULE 2" : "MODUL 2"}
-                  </span>
-                  <h3 className="text-sm font-black text-[#091A36] mt-2 font-['Plus_Jakarta_Sans'] leading-snug min-h-[44px]">
-                    {lang === "EN" ? "Core Skills & Workflow Architecture" : "Core Skills & Arsitektur Alur Kerja (Workflow)"}
-                  </h3>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-500 mt-3">
-                    ⏱️ 4 {lang === "EN" ? "Hours" : "Jam"}
-                  </span>
-                  <p className="text-xs text-slate-500 mt-4 leading-relaxed font-medium">
-                    {lang === "EN"
-                      ? "Master advanced prompt engineering, persona building, guardrails, and designing multi-agent flows."
-                      : "Kuasai prompt engineering tingkat lanjut, persona, guardrails, serta merancang workflow multi-agent yang efektif."}
-                  </p>
-                </div>
-
-                {/* Module 3 */}
-                <div className="bg-[#FCFAF7] border border-slate-100 hover:border-slate-200 rounded-3xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="h-12 w-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg font-bold shadow-inner">
-                    📢
-                  </div>
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 mt-5">
-                    {lang === "EN" ? "MODULE 3" : "MODUL 3"}
-                  </span>
-                  <h3 className="text-sm font-black text-[#091A36] mt-2 font-['Plus_Jakarta_Sans'] leading-snug min-h-[44px]">
-                    {lang === "EN" ? "Agentic AI for Marketing Automation" : "Agentic AI untuk Marketing Automation"}
-                  </h3>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-500 mt-3">
-                    ⏱️ 5 {lang === "EN" ? "Hours" : "Jam"}
-                  </span>
-                  <p className="text-xs text-slate-500 mt-4 leading-relaxed font-medium">
-                    {lang === "EN"
-                      ? "Build autonomous content writing engines, competitor tracking setups, and marketing automation."
-                      : "Bangun engine konten otonom, riset kompetitor, dan market intelligence yang berjalan otomatis dan terintegrasi."}
-                  </p>
-                </div>
-
-                {/* Module 4 */}
-                <div className="bg-[#FCFAF7] border border-slate-100 hover:border-slate-200 rounded-3xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="h-12 w-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-lg font-bold shadow-inner">
-                    👥
-                  </div>
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-purple-600 mt-5">
-                    {lang === "EN" ? "MODULE 4" : "MODUL 4"}
-                  </span>
-                  <h3 className="text-sm font-black text-[#091A36] mt-2 font-['Plus_Jakarta_Sans'] leading-snug min-h-[44px]">
-                    {lang === "EN" ? "Agentic AI for Business & SMB Operations" : "Agentic AI untuk Operasional Bisnis & UMKM"}
-                  </h3>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-500 mt-3">
-                    ⏱️ 5 {lang === "EN" ? "Hours" : "Jam"}
-                  </span>
-                  <p className="text-xs text-slate-500 mt-4 leading-relaxed font-medium">
-                    {lang === "EN"
-                      ? "Enhance customer service systems, lead qualification, sales analytics, and business optimization."
-                      : "Tingkatkan layanan pelanggan, qualify lead, analisis data penjualan, dan rekomendasi bisnis otomatis dengan AI."}
-                  </p>
-                </div>
-
-                {/* Module 5 */}
-                <div className="bg-[#FCFAF7] border border-slate-100 hover:border-slate-200 rounded-3xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="h-12 w-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-lg font-bold shadow-inner">
-                    🚀
-                  </div>
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-orange-600 mt-5">
-                    {lang === "EN" ? "MODULE 5" : "MODUL 5"}
-                  </span>
-                  <h3 className="text-sm font-black text-[#091A36] mt-2 font-['Plus_Jakarta_Sans'] leading-snug min-h-[44px]">
-                    {lang === "EN" ? "No-Code Implementation & Final Evaluation" : "Implementasi Tanpa Coding & Evaluasi Akhir"}
-                  </h3>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-500 mt-3">
-                    ⏱️ 3 {lang === "EN" ? "Hours" : "Jam"}
-                  </span>
-                  <p className="text-xs text-slate-500 mt-4 leading-relaxed font-medium">
-                    {lang === "EN"
-                      ? "Deploy robust multi-agent flows on no-code tools, manage API costs, and join the showcase."
-                      : "Deploy workflow di platform no-code, evaluasi performa, mengelola biaya, dan final showcase."}
-                  </p>
-                </div>
-
+                {currentT.modulesList.map((m) => {
+                  const moduleIcons = {
+                    1: { emoji: "💡", bg: "bg-amber-100", text: "text-amber-600" },
+                    2: { emoji: "🤖", bg: "bg-blue-100", text: "text-blue-600" },
+                    3: { emoji: "⚡", bg: "bg-emerald-100", text: "text-emerald-600" },
+                    4: { emoji: "🧩", bg: "bg-purple-100", text: "text-purple-600" },
+                    5: { emoji: "🎓", bg: "bg-orange-100", text: "text-orange-600" }
+                  };
+                  const design = moduleIcons[m.id] || { emoji: "📚", bg: "bg-slate-100", text: "text-slate-650" };
+                  return (
+                    <div key={m.id} className="bg-[#FCFAF7] border border-slate-100 hover:border-slate-200 rounded-3xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className={`h-12 w-12 rounded-2xl ${design.bg} ${design.text} flex items-center justify-center text-lg font-bold shadow-inner`}>
+                        {design.emoji}
+                      </div>
+                      <span className={`text-[10px] font-extrabold uppercase tracking-wider ${design.text} mt-5`}>
+                        {lang === "EN" ? `MODULE ${m.id}` : `MODUL ${m.id}`}
+                      </span>
+                      <h3 className="text-sm font-black text-[#091A36] mt-2 font-['Plus_Jakarta_Sans'] leading-snug min-h-[44px]">
+                        {m.title}
+                      </h3>
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-500 mt-3">
+                        ⏱️ {m.hours}
+                      </span>
+                      <p className="text-xs text-slate-500 mt-4 leading-relaxed font-medium">
+                        {m.desc}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -4405,12 +4357,12 @@ export default function LensetekAgenticAiLandingPage() {
           <section id="benefits" className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100">
             <div className="mx-auto max-w-7xl text-center">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#091A36] sm:text-4xl font-['Plus_Jakarta_Sans']">
-                {lang === "EN" ? "Build Real-World Solutions for Your Business" : "Bangun Solusi Nyata untuk Bisnis Anda"}
+                {lang === "EN" ? "Build Real-World Solutions for Your Research" : "Bangun Solusi Nyata untuk Riset Anda"}
               </h2>
               <p className="mt-4 text-sm text-slate-500 max-w-2xl mx-auto font-medium">
                 {lang === "EN"
-                  ? "Explore ready-to-deploy core agents modeled directly in our comprehensive academy."
-                  : "Mulai bangun solusi kecerdasan buatan siap pakai untuk operasional bisnis harian Anda."}
+                  ? "Explore ready-to-deploy academic agents modeled directly in our comprehensive academy."
+                  : "Mulai bangun solusi kecerdasan buatan siap pakai untuk aktivitas riset harian Anda."}
               </p>
 
               <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-6">
@@ -4419,8 +4371,8 @@ export default function LensetekAgenticAiLandingPage() {
                 <div className="bg-[#FCFAF7] border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
                   <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 shrink-0">
                     <img 
-                      src="/content_marketing.png" 
-                      alt="Content Marketing Engine" 
+                      src="/literature_synthesis.png" 
+                      alt="Literature Synthesis Engine" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                     <div className="absolute bottom-3 left-3 h-8 w-8 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-xs shadow-md">
@@ -4430,12 +4382,12 @@ export default function LensetekAgenticAiLandingPage() {
                   <div className="p-5 flex-grow flex flex-col justify-between text-left">
                     <div>
                       <h3 className="text-xs font-black text-[#091A36] font-['Plus_Jakarta_Sans']">
-                        Content Marketing Engine
+                        Literature Synthesis Engine
                       </h3>
                       <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-semibold">
                         {lang === "EN" 
-                          ? "Automated trend research, copywriting, and QA check." 
-                          : "Riset tren, penulisan, dan QA konten berjalan otomatis."}
+                          ? "Automated paper analysis, extraction, and comparison matrix." 
+                          : "Analisis jurnal, ekstraksi data, dan pembuatan matriks komparasi otomatis."}
                       </p>
                     </div>
                   </div>
@@ -4445,8 +4397,8 @@ export default function LensetekAgenticAiLandingPage() {
                 <div className="bg-[#FCFAF7] border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
                   <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 shrink-0">
                     <img 
-                      src="/competitor_tracking.png" 
-                      alt="Competitor Tracking" 
+                      src="/research_gap.png" 
+                      alt="Research Gap Discovery" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                     <div className="absolute bottom-3 left-3 h-8 w-8 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-xs shadow-md">
@@ -4456,12 +4408,12 @@ export default function LensetekAgenticAiLandingPage() {
                   <div className="p-5 flex-grow flex flex-col justify-between text-left">
                     <div>
                       <h3 className="text-xs font-black text-[#091A36] font-['Plus_Jakarta_Sans']">
-                        Competitor Tracking
+                        Research Gap Discovery
                       </h3>
                       <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-semibold">
                         {lang === "EN" 
-                          ? "Monitor competitor prices, reviews, and activities periodically." 
-                          : "Pantau harga, ulasan, dan aktivitas kompetitor secara berkala."}
+                          ? "Map scientific phenomena, methodologies, and open gaps." 
+                          : "Memetakan fenomena ilmiah, metodologi, dan celah riset terbuka."}
                       </p>
                     </div>
                   </div>
@@ -4471,8 +4423,8 @@ export default function LensetekAgenticAiLandingPage() {
                 <div className="bg-[#FCFAF7] border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
                   <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 shrink-0">
                     <img 
-                      src="/customer_support.png" 
-                      alt="Customer Support Cerdas" 
+                      src="/academic_reviewer.png" 
+                      alt="Academic Reviewer OS" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                     <div className="absolute bottom-3 left-3 h-8 w-8 rounded-full bg-purple-400 text-white flex items-center justify-center text-xs shadow-md">
@@ -4482,12 +4434,12 @@ export default function LensetekAgenticAiLandingPage() {
                   <div className="p-5 flex-grow flex flex-col justify-between text-left">
                     <div>
                       <h3 className="text-xs font-black text-[#091A36] font-['Plus_Jakarta_Sans']">
-                        Customer Support Cerdas
+                        Academic Reviewer OS
                       </h3>
                       <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-semibold">
                         {lang === "EN" 
-                          ? "Answer FAQs, route escalations, and integrate order lookups via API." 
-                          : "Jawab FAQ, routing eskalasi, dan integrasi cek pesanan via API."}
+                          ? "Evaluate proposal arguments, check formatting, and check citations." 
+                          : "Mengevaluasi argumen proposal, memeriksa format, dan sitasi."}
                       </p>
                     </div>
                   </div>
@@ -4497,8 +4449,8 @@ export default function LensetekAgenticAiLandingPage() {
                 <div className="bg-[#FCFAF7] border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
                   <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 shrink-0">
                     <img 
-                      src="/sales_analytics.png" 
-                      alt="Analisis Penjualan" 
+                      src="/proposal_writer.png" 
+                      alt="Proposal Writer Companion" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                     <div className="absolute bottom-3 left-3 h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs shadow-md">
@@ -4508,12 +4460,12 @@ export default function LensetekAgenticAiLandingPage() {
                   <div className="p-5 flex-grow flex flex-col justify-between text-left">
                     <div>
                       <h3 className="text-xs font-black text-[#091A36] font-['Plus_Jakarta_Sans']">
-                        Analisis Penjualan
+                        Proposal Writer Companion
                       </h3>
                       <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-semibold">
                         {lang === "EN" 
-                          ? "Read data, identify trends, and generate automated business suggestions." 
-                          : "Baca data, temukan tren, dan dapatkan rekomendasi otomatis."}
+                          ? "Draft background of the study, study formulation, and methodologies." 
+                          : "Menyusun latar belakang riset, perumusan masalah, dan metodologi."}
                       </p>
                     </div>
                   </div>
@@ -4523,8 +4475,8 @@ export default function LensetekAgenticAiLandingPage() {
                 <div className="bg-[#FCFAF7] border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
                   <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 shrink-0">
                     <img 
-                      src="/warehouse_boxes.png" 
-                      alt="Rekomendasi Stok & Promosi" 
+                      src="/book_outline.png" 
+                      alt="Book Outline Creator" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                     <div className="absolute bottom-3 left-3 h-8 w-8 rounded-full bg-orange-400 text-white flex items-center justify-center text-xs shadow-md">
@@ -4534,12 +4486,12 @@ export default function LensetekAgenticAiLandingPage() {
                   <div className="p-5 flex-grow flex flex-col justify-between text-left">
                     <div>
                       <h3 className="text-xs font-black text-[#091A36] font-['Plus_Jakarta_Sans']">
-                        Rekomendasi Stok & Promosi
+                        Book Outline Creator
                       </h3>
                       <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-semibold">
                         {lang === "EN" 
-                          ? "Optimize stock inventory and data-driven promotion strategies." 
-                          : "Optimalkan stok barang dan strategi promosi berbasis data."}
+                          ? "Create syllabus-aligned chapters and teaching lesson plans." 
+                          : "Menyusun outline bab buku dan rencana modul pembelajaran."}
                       </p>
                     </div>
                   </div>
@@ -4566,12 +4518,12 @@ export default function LensetekAgenticAiLandingPage() {
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-snug font-['Plus_Jakarta_Sans']">
-                        {lang === "EN" ? "Ready to build Agentic AI for your business?" : "Siap membangun Agen AI untuk bisnis Anda?"}
+                        {lang === "EN" ? "Ready to build Agentic AI for your research?" : "Siap membangun sistem riset otonom Anda?"}
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-350 mt-3 leading-relaxed font-medium">
                         {lang === "EN"
-                          ? "Login or register now on the Lensetek platform and begin your journey as an Agentic AI practitioner today."
-                          : "Masuk atau daftar sekarang di platform Lensetek dan mulai perjalanan Anda menjadi praktisi Agentic AI."}
+                          ? "Login or register now on the Lensetek platform and begin your journey to master Agentic AI for researchers and authors today."
+                          : "Masuk atau daftar sekarang di platform Lensetek dan mulai perjalanan Anda menguasai Agentic AI untuk kepengaruhan akademik."}
                       </p>
                     </div>
                   </div>

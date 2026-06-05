@@ -35,8 +35,8 @@ app.post('/api/agent/run', async (req, res) => {
   try {
     // Initialize the OpenAI Agent securely on the server-side
     const agent = new Agent({
-      name: agentName || 'Marketing Intelligence Assistant',
-      instructions: instructions || 'You are an autonomous AI Agent specialized in Marketing and Market Intelligence.',
+      name: agentName || 'Academic Research Assistant',
+      instructions: instructions || 'You are an autonomous AI Agent specialized in Academic Research, Writing, and Literature Analysis.',
       model: MODEL,
     });
 

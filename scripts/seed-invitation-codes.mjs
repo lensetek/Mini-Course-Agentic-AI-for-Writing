@@ -2,10 +2,17 @@ import { readFile } from "node:fs/promises";
 import process from "node:process";
 import admin from "firebase-admin";
 import dotenv from "dotenv";
+import fs from "fs";
 
-dotenv.config({ path: ".env.local" });
+if (fs.existsSync(".env.local")) {
+  dotenv.config({ path: ".env.local" });
+} else {
+  dotenv.config({ path: ".env" });
+}
 
 const invitationCodes = [
+  { code: "UNDA", limit: 30 },
+  { code: "WIDYATAMA", limit: 250 },
   { code: "UNJA", limit: 250 },
   { code: "AI-MARKETER-2026", limit: 5 },
   { code: "MEMBER-SPECIAL", limit: 1 },
@@ -33,7 +40,7 @@ async function main() {
 
   for (const invitation of invitationCodes) {
     const code = invitation.code.trim().toUpperCase();
-    const ref = db.collection("invitationCodes").doc(code);
+    const ref = db.collection("academic_invitationCodes").doc(code);
     batch.set(
       ref,
       {

@@ -15,10 +15,11 @@ Once the folder has been copied, open your terminal in the new project directory
 npm install
 ```
 
-## 3. Environment & Credentials Configuration (Security)
+## 3. Environment & Database Configuration (Security & Isolation)
 **IMPORTANT**: Always ensure project credentials are secure so they are not exposed publicly (e.g., in the frontend or accessible via client-side).
 - Create a new `.env.local` file based on the `.env.example` file.
 - Create a new backend/Firebase project (if required) and insert the new configuration/API Keys into `.env.local`.
+- **CRITICAL DATA ISOLATION**: If you must reuse an existing Firebase/Database project, you **MUST** rename all database collections in your source code (e.g., in Firestore, rename `progress` to `newcourse_progress`, `certificates` to `newcourse_certificates`). Using the exact same collection names as an existing live project will corrupt and overwrite active student data across multiple courses.
 - Remember: Only use the `VITE_` prefix for environment variables that are safe and need to be read by the browser/frontend. Never expose highly sensitive secret keys.
 
 ## 4. Updating Project Identity
