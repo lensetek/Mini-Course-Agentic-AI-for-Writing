@@ -1669,7 +1669,7 @@ export default function LensetekAgenticAiLandingPage() {
     new Date(dateValue).toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" });
 
   const createCertificateNo = (uid) =>
-    `LAIMB-${new Date().getFullYear()}-${uid.slice(0, 6).toUpperCase()}-${Date.now().toString(36).toUpperCase()}`;
+    `LAIMRA-${new Date().getFullYear()}-${uid.slice(0, 6).toUpperCase()}-${Date.now().toString(36).toUpperCase()}`;
 
   const getDynamicVerificationUrl = (record) => {
     if (!record) return "";
@@ -1780,6 +1780,13 @@ export default function LensetekAgenticAiLandingPage() {
     pdf.setTextColor("#091A36");
     pdf.text(record.holderName, pageWidth / 2, ty(0.442), { align: "center", baseline: "middle", maxWidth: tw(0.7) });
 
+    pdf.setFillColor(255, 255, 255);
+    pdf.rect(tx(0.15), ty(0.56), tw(0.7), th(0.08), "F");
+    pdf.setFont("times", "bold");
+    fitPdfFontSize(pdf, record.courseTitle, tw(0.75), 24, 12);
+    pdf.setTextColor("#091A36");
+    pdf.text(record.courseTitle, pageWidth / 2, ty(0.60), { align: "center", baseline: "middle", maxWidth: tw(0.8) });
+
     const signatureQr = await createPdfQr(
       qrCodeModule,
       `Digitally signed by Astrid, Program Director, Lensetek International, LLC. Certificate: ${record.certificateNo}`,
@@ -1831,7 +1838,7 @@ export default function LensetekAgenticAiLandingPage() {
     drawPdfText(pdf, "Participant", margin + 14, 57, { size: 6.5, style: "bold", color: "#94A3B8" });
     drawPdfText(pdf, record.holderName, margin + 48, 57, { size: 9, style: "bold" });
     drawPdfText(pdf, "Course", margin + 14, 67, { size: 6.5, style: "bold", color: "#94A3B8" });
-    drawPdfText(pdf, "Agentic AI Mastery for Researchers & Authors", margin + 48, 67, { size: 8, style: "bold" });
+    drawPdfText(pdf, record.courseTitle, margin + 48, 67, { size: 8, style: "bold" });
     drawPdfText(pdf, "Duration", margin + 14, 77, { size: 6.5, style: "bold", color: "#94A3B8" });
     drawPdfText(pdf, "20 Hours", margin + 48, 77, { size: 8, style: "bold" });
 
@@ -3835,6 +3842,13 @@ export default function LensetekAgenticAiLandingPage() {
                               </p>
                             </div>
 
+                            {/* Course Title Overlay */}
+                            <div className="absolute left-[10%] right-[10%] top-[56%] h-[8%] bg-white flex items-center justify-center z-10">
+                              <p className="font-serif text-[clamp(12px,2.2vw,28px)] whitespace-nowrap font-extrabold text-[#091A36]">
+                                {certificateRecord.courseTitle}
+                              </p>
+                            </div>
+
                             {/* Astrid's digital signature QR block: transparent container sitting beautifully above the line without covering "Program Director" */}
                             <div className="absolute bottom-[10.2%] left-[24.2%] flex items-end gap-2 bg-transparent text-left">
                               <img
@@ -3906,7 +3920,7 @@ export default function LensetekAgenticAiLandingPage() {
                                   <Award className="h-3.5 w-3.5 text-cyan-600" /> Course
                                 </div>
                                 <div className="text-slate-400">:</div>
-                                <div className="font-extrabold text-slate-800 leading-none">Agentic AI Mastery for Researchers & Authors</div>
+                                <div className="font-extrabold text-slate-800 leading-none">{certificateRecord.courseTitle}</div>
 
                                 <div className="flex items-center gap-2 text-slate-400 font-extrabold uppercase tracking-wider text-[10px]">
                                   <Clock className="h-3.5 w-3.5 text-cyan-600" /> Total Duration

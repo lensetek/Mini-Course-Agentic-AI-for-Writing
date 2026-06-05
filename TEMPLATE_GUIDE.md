@@ -19,8 +19,8 @@ npm install
 **CRITICAL RULE**: **Selalu cek keamanan credential project agar tidak ter ekspose public seperti di frontend atau diakses melalui client side.**
 - Create a new `.env.local` file based on the `.env.example` file.
 - Create a new backend/Firebase project (if required) and insert the new configuration/API Keys into `.env.local`.
-- **CRITICAL DATA ISOLATION**: If you must reuse an existing Firebase/Database project, you **MUST** rename all database collections in your source code (e.g., in Firestore, rename `progress` to `newcourse_progress`, `certificates` to `newcourse_certificates`). Using the exact same collection names as an existing live project will corrupt and overwrite active student data across multiple courses.
-- Remember: Only use the `VITE_` prefix for environment variables that are safe and need to be read by the browser/frontend. Never expose highly sensitive secret keys like OpenAI API keys or Firebase Admin credentials in frontend variables.
+- **CRITICAL DATA ISOLATION**: If you must reuse an existing Firebase project, you **MUST** rename all database collections in your source code (e.g., in Firestore, rename `progress` to `newcourse_progress`, `certificates` to `newcourse_certificates`). Using the exact same collection names as an existing live project will corrupt and overwrite active student data across multiple courses.
+- Remember: Only use the `VITE_` prefix for environment variables that are safe and need to be read by the browser/frontend. Never expose highly sensitive secret keys (like Firebase Admin credentials) in frontend variables. As this project is fully serverless and uses OpenAI Custom GPTs for the AI Mentor, there is no local backend and no OpenAI API key should be required.
 
 ## 4. Updating Project Identity
 Update the application identity from the old project to the new one in the following files:
@@ -31,8 +31,14 @@ Update the application identity from the old project to the new one in the follo
 ## 5. Course Content Customization
 - Adjust the content structure, quizzes, modules, and text on UI components or in your JSON/database files.
 - Replace any static text on the registration page, home page, or dashboard.
+- **AI Mentor Sandbox**: Update the Custom GPT URL link in `src/App.jsx` (inside the AI Mentor rendering block) if you create a new specialized OpenAI Custom GPT for the new course.
 
-## 6. Design Guidelines (Mobile-First)
+## 6. Certificate Customization
+If your course uses the automated certificate generation feature:
+- **Certificate Prefix**: Open `src/App.jsx` and locate the `createCertificateNo` function. Change the prefix (e.g., `LAIMRA-`) to a unique acronym representing your new course. This ensures new certificates do not conflict with old ones.
+- **Certificate Template Overlay**: The base image `public/cert-template.png` may contain hardcoded text. If so, ensure that the dynamic HTML overlay and `jsPDF` coordinate logic in `drawCertificatePdfPage` are properly aligned and sized to cover the old text with the new `courseTitle`. Alternatively, replace `cert-template.png` with a clean image that doesn't have the hardcoded course name.
+
+## 7. Design Guidelines (Mobile-First)
 **CRITICAL RULE**: **Selalu perhatikan tampilan responsive mobile-view first.**
 Ensure you always adhere to the project's core design principle:
 - When creating or modifying UI components, design and optimize the layout for mobile screen sizes first before scaling up to tablet or desktop views.

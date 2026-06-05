@@ -53,15 +53,13 @@ The course contains 5 main modules with a total of 20 learning hours:
 - Progress, biodata, and certificate storage in Firestore.
 - Learning materials with session breakdowns for each module.
 - Module quizzes to unlock course progress.
-- AI Mentor sandbox through an Express backend so the OpenAI API key is not exposed in the frontend.
+- AI Mentor sandbox through a direct link to OpenAI ChatGPT Custom GPT.
 - Certificate generator and verification URL.
 - Responsive UI with React, Vite, Tailwind CSS, Framer Motion, and Lucide React.
 
 ## Tech Stack
 
 - **Frontend**: React, Vite, Tailwind CSS, Framer Motion
-- **Local backend API**: Express.js
-- **AI runtime**: OpenAI Agents SDK
 - **Authentication & database**: Firebase Authentication, Firestore, Firebase Analytics
 - **Icons**: Lucide React
 - **Build tools**: Vite, ESLint
@@ -73,7 +71,6 @@ The course contains 5 main modules with a total of 20 learning hours:
 - Node.js 18 or newer.
 - npm.
 - A Firebase project with Authentication and Firestore enabled.
-- An OpenAI API key to run the AI Mentor sandbox.
 
 ### 1. Clone the Repository
 
@@ -101,45 +98,17 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_firebase_app_id
 VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
 VITE_CREDENTIAL_URL=http://localhost:5173
-VITE_AGENT_API_URL=http://localhost:3001/api/agent/run
-
-OPENAI_API=your_openai_api_key
-OPENAI_MODEL=gpt-4.1-nano
-PORT=3001
 ```
 
 Security notes (**CRITICAL**):
 - **Selalu cek keamanan credential project agar tidak terekspose public seperti di frontend atau diakses melalui client side.**
 - Variables with the `VITE_` prefix are bundled into the frontend by Vite. Use them only for public client configuration such as Firebase web config.
-- Never store the OpenAI API key in a `VITE_` variable.
-- The OpenAI key must stay on the backend through `OPENAI_API`, where it is used by `server.js`.
-- `VITE_AGENT_API_URL` is safe to expose because it is only the public backend endpoint URL, not a secret.
 - `.env.local`, `.env`, and other env files are ignored by `.gitignore`.
 - Invitation codes should be stored in Firestore, not in frontend environment variables.
 
-### 4. Run the AI Mentor Backend
+### 4. Run the Frontend
 
-Open the first terminal:
-
-```bash
-npm run server
-```
-
-The backend runs at:
-
-```text
-http://localhost:3001
-```
-
-AI Mentor endpoint:
-
-```text
-POST http://localhost:3001/api/agent/run
-```
-
-### 5. Run the Frontend
-
-Open a second terminal:
+Open your terminal:
 
 ```bash
 npm run dev
@@ -158,12 +127,6 @@ npm run dev
 ```
 
 Runs the Vite frontend for development.
-
-```bash
-npm run server
-```
-
-Runs the Express backend for the AI Mentor sandbox.
 
 ```bash
 npm run build
@@ -189,21 +152,7 @@ Runs ESLint.
 
 ## Deployment
 
-The frontend can be deployed to Firebase Hosting, Vercel, Netlify, or another static hosting platform that supports Vite. The `server.js` backend should be deployed as a separate Node.js service if the AI Mentor sandbox needs to be available in production.
-
-Make sure secrets such as `OPENAI_API` are stored only in the backend environment, never in the frontend hosting configuration.
-
-For production, if the frontend and `server.js` are deployed as the same service, use the same-origin endpoint:
-
-```env
-VITE_AGENT_API_URL=/api/agent/run
-```
-
-If the backend is deployed as a separate service, set `VITE_AGENT_API_URL` to the deployed backend endpoint, for example:
-
-```env
-VITE_AGENT_API_URL=https://your-backend.example.com/api/agent/run
-```
+The frontend can be deployed to Firebase Hosting, Vercel, Netlify, or another static hosting platform that supports Vite.
 
 ## License
 
